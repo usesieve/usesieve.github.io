@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sieve - AI Data Agents</title>
+    <link rel="icon" type="image/svg+xml" href="images/sieve_logo.svg">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-black min-h-screen">
+    <div class="fixed top-4 left-4 w-20 h-20 logo-container">
+        <img src="images/sieve_logo.svg" alt="Crews Logo" class="w-full h-full">
+    </div>
+    
+    <div class="background-container">
+        <!-- Fallback image background -->
+        <!-- <img src="images/background.png" alt="Background" class="fixed-background"> -->
+        <img src="images/surreal_nature_background.webp" alt="Background" class="fixed-background">
+        <!-- Video background -->
+        <!-- <video autoplay muted loop playsinline class="fixed-background video-background">
+            <source src="images/liquid_mercury_background_video.mp4" type="video/mp4">
+        </video> -->
+    </div>
+    
+    <div class="content-container">
+        <main class="min-h-screen flex flex-col items-center justify-center">
+            <h1 id="title" class="text-8xl font-bold mb-4 chrome-text">
+                <span id="typed-text"></span>
+            </h1>
+            <p class="text-2xl text-white mb-8 subtitle">AI data agents</p>
+        </main>
+
+        <!-- <section class="wave-text-container overflow-hidden py-16">
+            <div class="wave-text">
+                <span>S</span><span>h</span><span>i</span><span>r</span><span>k</span>
+                <span>&nbsp;</span>
+                <span>y</span><span>o</span><span>u</span><span>r</span>
+                <span>&nbsp;</span>
+                <span>d</span><span>a</span><span>t</span><span>a</span>
+                <span>&nbsp;</span>
+                <span>c</span><span>h</span><span>o</span><span>r</span><span>e</span><span>s</span>
+            </div>
+        </section> -->
+
+        <section class="min-h-screen flex flex-col items-center justify-center py-16">
+            <h2 class="text-5xl font-bold mb-4 chrome-text">Example usecases</h2>
+            <p class="text-xl text-white mb-16 subtitle">Give your most dreaded data tasks to our agents</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto px-4">
+                <!-- Card 1 -->
+                <div class="usecase-card">
+                    <div class="card-image mb-4">
+                        <img src="images/surreal_data_extraction.webp" alt="Data Extraction" class="w-full h-48 object-cover rounded-t-lg">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 chrome-text">Data Extraction</h3>
+                        <p class="text-gray-400 mb-2">Automated data extraction and sanitization</p>
+                        <p class="text-white">Fast, accurate data extraction from any format such as PDF, image, or video. Data can be seamlessly converted into text, tables, forms, or any other format compatible with your existing workflows.</p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="usecase-card">
+                    <div class="card-image mb-4">
+                        <img src="images/surreal_data_cleaning.webp" alt="Data Cleaning" class="w-full h-48 object-cover rounded-lg">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 chrome-text">Data Cleaning</h3>
+                        <p class="text-gray-400 mb-2">Expert-verified data quality</p>
+                        <p class="text-white"> Let our agents handle messy data, duplicates, and inconsistencies. They'll extract data from any format, clean, and structure it automatically.</p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="usecase-card">
+                    <div class="card-image mb-4">
+                        <img src="images/surreal_data_monitoring.webp" alt="Data Monitoring" class="w-full h-48 object-cover rounded-t-lg">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 chrome-text">Data Monitoring</h3>
+                        <p class="text-gray-400 mb-2">Continuous quality assurance</p>
+                        <p class="text-white">Monitor data quality and pipeline health 24/7. Incorrect data is flagged and fixed automatically, all with zero interruptions to your ETL pipelines.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- <section id="data-options" class="min-h-screen flex flex-col items-center justify-center py-16">
+            <h2 class="text-5xl font-bold mb-4 chrome-text">Data options</h2>
+            <p class="text-xl text-white mb-16 subtitle">Sieve agents are continuously training on new data types</p>
+            
+            <div class="flex flex-col gap-16 max-w-7xl mx-auto px-4">
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                 
+                    <div class="usecase-card">
+                        <div class="card-image mb-4">
+                            <img src="images/satellite_data.png" alt="Satellite Data" class="w-full h-48 object-cover rounded-t-lg">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-2 chrome-text">Satellite Data</h3>
+                            <p class="text-gray-400 mb-2">Geospatial intelligence</p>
+                            <p class="text-white">Process and analyze satellite imagery for insights into geographical patterns and changes over time.</p>
+                        </div>
+                    </div>
+                    <div class="usecase-card">
+                        <div class="card-image mb-4">
+                            <img src="images/social_data.png" alt="Social Media Data" class="w-full h-48 object-cover rounded-t-lg">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-2 chrome-text">Social Media Data</h3>
+                            <p class="text-gray-400 mb-2">Social sentiment analysis</p>
+                            <p class="text-white">Extract insights from social media trends, sentiment analysis, and user behavior patterns.</p>
+                        </div>
+                    </div>
+                    <div class="usecase-card">
+                        <div class="card-image mb-4">
+                            <img src="images/credit_card_data.png" alt="Credit Card Data" class="w-full h-48 object-cover rounded-t-lg">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-2 chrome-text">Credit Card Data</h3>
+                            <p class="text-gray-400 mb-2">Consumer spending insights</p>
+                            <p class="text-white">Process millions of rows of consumer spending data for actionable insights.</p>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                    <div class="usecase-card">
+                        <div class="card-image mb-4">
+                            <img src="images/weather_data.png" alt="Weather Data" class="w-full h-48 object-cover rounded-t-lg">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-2 chrome-text">Weather Data</h3>
+                            <p class="text-gray-400 mb-2">Environmental analytics</p>
+                            <p class="text-white">Process historical and real-time weather data for climate patterns and predictions.</p>
+                        </div>
+                    </div>
+
+                    <div class="usecase-card">
+                        <div class="card-image mb-4">
+                            <img src="images/web_click_data.png" alt="Web Click Data" class="w-full h-48 object-cover rounded-t-lg">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-2 chrome-text">Web Click Data</h3>
+                            <p class="text-gray-400 mb-2">Consumer browsing intelligence</p>
+                            <p class="text-white">Analyze consumer web traffic and browsing behavior.</p>
+                        </div>
+                    </div>
+
+                    <div class="usecase-card">
+                        <div class="card-image mb-4">
+                            <img src="images/gps_data.png" alt="GPS Data" class="w-full h-48 object-cover rounded-t-lg">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-2 chrome-text">GPS Data</h3>
+                            <p class="text-gray-400 mb-2">Location data analysis</p>
+                            <p class="text-white">Extract insights from location data retrieved from internet-connected devices.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+
+        <section id="contact" class="min-h-screen flex flex-col items-center justify-center">
+            <h2 class="text-4xl font-bold mb-8 chrome-text">Contact Us</h2>
+            <form class="w-full max-w-lg" action="https://formspree.io/f/myzyalpo" method="POST">
+                <div class="mb-4">
+                    <input type="text" name="name" placeholder="Your Name" required 
+                           class="w-full p-2 rounded bg-gray-800 text-white">
+                </div>
+                <div class="mb-4">
+                    <input type="email" name="email" placeholder="Your Email" required 
+                           class="w-full p-2 rounded bg-gray-800 text-white">
+                </div>
+                <div class="mb-4">
+                    <textarea name="message" placeholder="Your Message" required 
+                              class="w-full p-2 rounded bg-gray-800 text-white h-32"></textarea>
+                </div>
+                <button type="submit" class="chrome-button w-full p-2 rounded">Send Message</button>
+            </form>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
