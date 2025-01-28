@@ -413,20 +413,3 @@ section {
 .logo-container img {
   border-radius: 50%;
 } 
-
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    width: 100vw;
-    max-width: 1200px;
-  }
-
-  .grid-container img {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
-  }
