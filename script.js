@@ -10,7 +10,7 @@ const CONTINUOUS_LOOP = true;  // Set to false to stop after last word
 const TYPING_STRINGS = [
     'sieve',
     'sieve AI',
-    // 'sieve agents',
+    'sieve agents',
     'sieve data',
 ];
 
