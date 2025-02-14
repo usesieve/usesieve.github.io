@@ -33,62 +33,31 @@
             <p class="text-2xl text-white mb-8 subtitle">AI data quality analysts</p>
         </main>
 
-        <section id="image-gallery" class="min-h-screen flex flex-col items-center justify-center py-16">
-            <h2 class="text-5xl font-bold mb-4 chrome-text">Product images</h2>
-            <p class="text-xl text-white mb-16 subtitle">The software is still under development, but here are some screenshots from our early prototype</p>
-        
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto px-4">
-                <!-- Image 1 -->
-                <div class="usecase-card hover:shadow-lg">
-                    <div class="aspect-w-16 aspect-h-9">
-                        <img src="images/screenshot1.png" alt="Image 1" class="w-full h-full object-cover rounded-lg">
-                    </div>
-                </div>
-        
-                <!-- Image 2 -->
-                <div class="usecase-card hover:shadow-lg">
-                    <div class="aspect-w-16 aspect-h-9">
-                        <img src="images/screenshot2.png" alt="Image 2" class="w-full h-full object-cover rounded-lg">
-                    </div>
-                </div>
-        
-                <!-- Image 3 -->
-                <div class="usecase-card hover:shadow-lg">
-                    <div class="aspect-w-16 aspect-h-9">
-                        <img src="images/screenshot3.png" alt="Image 3" class="w-full h-full object-cover rounded-lg">
-                    </div>
-                </div>
-        
-                <!-- Image 4 -->
-                <div class="usecase-card hover:shadow-lg">
-                    <div class="aspect-w-16 aspect-h-9">
-                        <img src="images/screenshot4.png" alt="Image 4" class="w-full h-full object-cover rounded-lg">
-                    </div>
-                </div>
-        
-                <!-- Image 5 -->
-                <div class="usecase-card hover:shadow-lg">
-                    <div class="aspect-w-16 aspect-h-9">
-                        <img src="images/screenshot5.png" alt="Image 5" class="w-full h-full object-cover rounded-lg">
-                    </div>
-                </div>
-        
-                <!-- Image 6 -->
-                <div class="usecase-card hover:shadow-lg">
-                    <div class="aspect-w-16 aspect-h-9">
-                        <img src="images/screenshot6.png" alt="Image 6" class="w-full h-full object-cover rounded-lg">
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        
+        <h1>Clean, QA'd data in four lines of code</h1>
+        <div class="image-container">
+            <img src="images/sieve_code_sample.svg" alt="Fading Image" id="fadeImage">
+        </div>
+        <script>
+            window.addEventListener("scroll", function() {
+                let image = document.getElementById("fadeImage");
+                let windowHeight = window.innerHeight;
+                let scrollY = window.scrollY + windowHeight / 2;
+                let imageOffset = image.getBoundingClientRect().top + scrollY;
+                let imageHeight = (image.getBoundingClientRect().top + image.getBoundingClientRect().bottom)
+                
+                let opacity = Math.max(0.35, 1.4 - Math.abs(scrollY - imageHeight) / windowHeight);
+                image.style.opacity = opacity;
+                // Add a fuchsia glow that fades with opacity
+                let glowIntensity = opacity * 50;  // Adjust 50 to control the glow size
+                image.style.boxShadow = `0 0 ${glowIntensity}px ${glowIntensity / 2}px fuchsia`;
+            });
+        </script>
         
         
 
         <section class="min-h-screen flex flex-col items-center justify-center py-16">
             <h2 class="text-5xl font-bold mb-4 chrome-text">Example usecases</h2>
-            <p class="text-xl text-white mb-16 subtitle">Our software can handle your most common data tasks</p>
+            <p class="text-xl text-white mb-16 subtitle">Our agents can handle your most common data tasks</p>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto px-4">
                 <!-- Card 1 -->
@@ -129,96 +98,6 @@
             </div>
         </section>
 
-        <!-- <section id="data-options" class="min-h-screen flex flex-col items-center justify-center py-16">
-            <h2 class="text-5xl font-bold mb-4 chrome-text">Data options</h2>
-            <p class="text-xl text-white mb-16 subtitle">Sieve agents are continuously training on new data types</p>
-            
-            <div class="flex flex-col gap-16 max-w-7xl mx-auto px-4">
-                
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                 
-                    <div class="usecase-card">
-                        <div class="card-image mb-4">
-                            <img src="images/satellite_data.png" alt="Satellite Data" class="w-full h-48 object-cover rounded-t-lg">
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-2xl font-bold mb-2 chrome-text">Satellite Data</h3>
-                            <p class="text-gray-400 mb-2">Geospatial intelligence</p>
-                            <p class="text-white">Process and analyze satellite imagery for insights into geographical patterns and changes over time.</p>
-                        </div>
-                    </div>
-                    <div class="usecase-card">
-                        <div class="card-image mb-4">
-                            <img src="images/social_data.png" alt="Social Media Data" class="w-full h-48 object-cover rounded-t-lg">
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-2xl font-bold mb-2 chrome-text">Social Media Data</h3>
-                            <p class="text-gray-400 mb-2">Social sentiment analysis</p>
-                            <p class="text-white">Extract insights from social media trends, sentiment analysis, and user behavior patterns.</p>
-                        </div>
-                    </div>
-                    <div class="usecase-card">
-                        <div class="card-image mb-4">
-                            <img src="images/credit_card_data.png" alt="Credit Card Data" class="w-full h-48 object-cover rounded-t-lg">
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-2xl font-bold mb-2 chrome-text">Credit Card Data</h3>
-                            <p class="text-gray-400 mb-2">Consumer spending insights</p>
-                            <p class="text-white">Process millions of rows of consumer spending data for actionable insights.</p>
-                        </div>
-                    </div>
-                </div>
-
-                
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                
-                    <div class="usecase-card">
-                        <div class="card-image mb-4">
-                            <img src="images/weather_data.png" alt="Weather Data" class="w-full h-48 object-cover rounded-t-lg">
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-2xl font-bold mb-2 chrome-text">Weather Data</h3>
-                            <p class="text-gray-400 mb-2">Environmental analytics</p>
-                            <p class="text-white">Process historical and real-time weather data for climate patterns and predictions.</p>
-                        </div>
-                    </div>
-
-                    <div class="usecase-card">
-                        <div class="card-image mb-4">
-                            <img src="images/web_click_data.png" alt="Web Click Data" class="w-full h-48 object-cover rounded-t-lg">
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-2xl font-bold mb-2 chrome-text">Web Click Data</h3>
-                            <p class="text-gray-400 mb-2">Consumer browsing intelligence</p>
-                            <p class="text-white">Analyze consumer web traffic and browsing behavior.</p>
-                        </div>
-                    </div>
-
-                    <div class="usecase-card">
-                        <div class="card-image mb-4">
-                            <img src="images/gps_data.png" alt="GPS Data" class="w-full h-48 object-cover rounded-t-lg">
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-2xl font-bold mb-2 chrome-text">GPS Data</h3>
-                            <p class="text-gray-400 mb-2">Location data analysis</p>
-                            <p class="text-white">Extract insights from location data retrieved from internet-connected devices.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section> -->
-
-        <!-- <section id="about" class="min-h-screen flex items-center justify-center bg-gray-800 bg-opacity-30 py-10 px-5">
-            <div class="max-w-4xl text-center bg-white bg-opacity-70 p-12 rounded-xl">
-              <h2 class="text-4xl font-bold mb-8 chrome-text">About Us</h2>
-              <p class="text-xl text-gray-600 leading-relaxed">
-                We are an early stage, pre-seed software company on a mission to change the way people work. Our focus is on building software that automates repetitive workflows in data processing, helping organizations operate more efficiently and creatively.
-              </p>
-              <p class="text-xl text-gray-600 leading-relaxed mt-6">
-                Founded by MIT alumni with experience at top companies in the finance and consulting industries, we bring a deep understanding of technology and business to tackle meaningful challenges in workflow automation.
-              </p>
-            </div>
-          </section> -->
           
         <section id="contact" class="min-h-screen flex flex-col items-center justify-center">
             <h2 class="text-4xl font-bold mb-8 chrome-text">Contact Us</h2>

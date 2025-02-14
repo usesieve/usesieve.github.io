@@ -11,6 +11,12 @@ body {
     padding: 0;
     overflow-x: hidden;
     font-family: 'Poppins', sans-serif;
+    text-align: center;
+    height: 200vh; /* Ensures enough space to scroll */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+        
 }
 
 .background-container {
@@ -413,3 +419,18 @@ section {
 .logo-container img {
   border-radius: 50%;
 } 
+
+.image-container {
+    width: 50%;
+    transition: opacity 0.3s ease-in-out;
+    margin: 0 auto;
+    
+}
+
+
+h1 {
+    margin-bottom: 50px;
+    text-align: center;
+    font-size: xx-large;
+    color: aliceblue;
+}
