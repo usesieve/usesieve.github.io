@@ -12,7 +12,7 @@ body {
     overflow-x: hidden;
     font-family: 'Poppins', sans-serif;
     text-align: center;
-    height: 200vh; /* Ensures enough space to scroll */
+    height: 300vh; /* Ensures enough space to scroll */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -179,7 +179,7 @@ form button {
     display: flex;
     gap: 22px;
     justify-content: center;
-    margin-top: 29px;
+    margin-top: 0px;
   }
   
   .btn {
