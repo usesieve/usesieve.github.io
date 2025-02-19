@@ -7,25 +7,27 @@
     <link rel="icon" type="image/svg+xml" href="images/sieve_logo.svg">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
+    <!-- Adds typing animation functionality-->
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body class="bg-black min-h-screen">
+    <!--Logo-->
     <div class="fixed top-4 left-4 w-20 h-20 logo-container">
         <img src="images/sieve_logo.svg" alt="Sieve Logo" class="w-full h-full">
     </div>
     
+    <!--Background-->
     <div class="background-container">
         <!-- Fallback image background -->
-        <!-- <img src="images/background.png" alt="Background" class="fixed-background"> -->
         <img src="images/surreal_nature_background.webp" alt="Background" class="fixed-background">
-        <!-- Video background -->
-        <!-- <video autoplay muted loop playsinline class="fixed-background video-background">
-            <source src="images/liquid_mercury_background_video.mp4" type="video/mp4">
-        </video> -->
     </div>
     
+    <!--Homepage body-->
     <div class="content-container">
+    
+        <!--Subtitle-->
         <main class="min-h-screen flex flex-col items-center justify-center">
             <h1 id="title" class="text-8xl font-bold mb-4 chrome-text">
                 <span id="typed-text"></span>
@@ -33,6 +35,13 @@
             <p class="text-2xl text-white mb-8 subtitle">AI data quality analysts</p>
         </main>
 
+        <!--Buttons-->
+        <div class="hero-buttons">
+            <button class="btn btn-primary">Book a demo</button>
+            <button class="btn btn-secondary">Access API now</button>
+          </div>
+
+        <!--Code snippet example-->
         <h1>Clean, QA'd data in four lines of code</h1>
         <div class="image-container">
             <img src="images/sieve_code_sample.svg" alt="Fading Image" id="fadeImage">
@@ -53,8 +62,7 @@
             });
         </script>
         
-        
-
+        <!--Example use cases-->
         <section class="min-h-screen flex flex-col items-center justify-center py-16">
             <h2 class="text-5xl font-bold mb-4 chrome-text">Example usecases</h2>
             <p class="text-xl text-white mb-16 subtitle">Our agents can handle your most common data tasks</p>
@@ -98,7 +106,7 @@
             </div>
         </section>
 
-          
+        <!--Contact us form-->
         <section id="contact" class="min-h-screen flex flex-col items-center justify-center">
             <h2 class="text-4xl font-bold mb-8 chrome-text">Contact Us</h2>
             <form class="w-full max-w-lg" action="https://formspree.io/f/myzyalpo" method="POST">
