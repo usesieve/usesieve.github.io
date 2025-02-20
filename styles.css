@@ -232,7 +232,19 @@ nav ul li a:hover {
     margin: 0 auto;
   }
 
-/* Add these to your existing styles */
+
+
+/* Button styles to add to existing styles in order to show state  */
+
+.loading-button {
+    background: linear-gradient(45deg, #4ade80, #22c55e);
+    color: gray;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: default;
+}
+
 .success-button {
     background: linear-gradient(45deg, #4ade80, #22c55e);
     color: white;

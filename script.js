@@ -189,6 +189,12 @@ document.addEventListener('DOMContentLoaded', function() {
         const api_button = form.querySelector('button[type="submit"]');
         const originalButtonText = api_button.textContent;
 
+        //Have button show loading state so users do not submit form twice
+        api_button.classList.remove('chrome-button');
+        api_button.classList.add('loading-button');
+        api_button.textContent = "Loading...";
+        
+
         try {
             // Send registration request
             const response = await fetch(apiUrl, {
@@ -201,21 +207,26 @@ document.addEventListener('DOMContentLoaded', function() {
                     full_name: fullName
                 })
             });
-
             const result = await response.json();
+            console.log(result);
 
             if (response.ok) {
-                api_button.classList.remove('chrome-button');
+                api_button.classList.remove('chrome-button', 'error-state');
                 api_button.classList.add('success-button');
                 api_button.textContent = "✅ Registration successful! You may start using our API with your credentials.";
                 form.reset();
+
             } else {
-                api_button.textContent = `❌ Error: ${result.message || "Something went wrong"}`;
-                api_button.className = "error";
+                api_button.classList.remove('chrome-button');
+                api_button.classList.add('error-state');
+                api_button.textContent = `❌ Error: ${result.detail || "Something went wrong"}`;
+                form.reset();
             }
         } catch (error) {
-            api_button.textContent = "❌ Network error. Please try again.";
-            api_button.className = "error";
+            api_button.classList.remove('chrome-button');
+            api_button.classList.add('error-state');
+            api_button.textContent = `❌ Error: ${error.message || "Something went wrong"}`;
+            form.reset();
         }
     });
 
