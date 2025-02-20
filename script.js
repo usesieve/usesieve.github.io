@@ -23,6 +23,10 @@ function getCommonPrefix(str1, str2) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
+    //Demo signup button scrolling
+    document.querySelector('.btn.btn-secondary').addEventListener('click', function () {
+    document.getElementById('api_signup').scrollIntoView({ behavior: 'smooth' });
+    });
     // Set video playback speed
     const video = document.querySelector('.video-background');
     if (video) {
@@ -105,6 +109,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Start the typing animation
     setTimeout(typeText, 500);
 
+
+ 
+
     initializeSlideshow();
     // Add keyboard navigation
     document.addEventListener('keydown', (e) => {
@@ -112,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (e.key === 'ArrowRight') moveSlide(1);
     });
 
-    // Handle form submission
+    // Handle contact us form submission
     const form = document.querySelector('form');
     const submitButton = form.querySelector('button[type="submit"]');
     const originalButtonText = submitButton.textContent;
