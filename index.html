@@ -13,10 +13,22 @@
 </head>
 
 <body class="bg-black min-h-screen">
-    <!--Logo-->
-    <div class="fixed top-4 w-20 h-20 items-center logo-container">
-        <img src="images/sieve_logo.svg" alt="Sieve Logo" class="w-full h-full">
-    </div>
+    <!--Header, including logo-->
+    <header>
+        <div class="header-left">
+            <div class="w-20 h-20 items-center logo-container">
+                <img src="images/sieve_logo.svg" alt="Sieve Logo" class="w-full h-full">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/docs/">Docs></li> <!-- Link to Docusaurus -->
+                </ul>
+            </nav>
+        </div>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    </header>
+    
     
     <!--Background-->
     <div class="background-container">
