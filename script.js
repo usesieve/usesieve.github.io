@@ -110,17 +110,8 @@ document.addEventListener('DOMContentLoaded', function() {
     setTimeout(typeText, 500);
 
 
- 
-
-    initializeSlideshow();
-    // Add keyboard navigation
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowLeft') moveSlide(-1);
-        if (e.key === 'ArrowRight') moveSlide(1);
-    });
-
     // Handle contact us form submission
-    const form = document.querySelector('form');
+    const form = document.getElementById('contact');
     const submitButton = form.querySelector('button[type="submit"]');
     const originalButtonText = submitButton.textContent;
 
@@ -166,6 +157,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    //Use case cards
     // Add click handlers to usecase cards
     const usecaseCards = document.querySelectorAll('.usecase-card');
     usecaseCards.forEach(card => {
@@ -185,9 +177,65 @@ document.addEventListener('DOMContentLoaded', function() {
             card.style.cursor = 'pointer';
         });
     });
+
+    //API form account creation
+
+    document.getElementById("api_signup").addEventListener("submit", async function(event) {
+        event.preventDefault(); // Prevent form from refreshing the page
+        
+        // Get user input values
+        const fullName = document.getElementById("full_name").value;
+        const email = document.getElementById("api_email").value;
+        const password = document.getElementById("password").value;
+        const userType = "requester"
+        //const responseMessage = document.getElementById("responseMessage");
+
+        // API endpoint (replace with your actual API URL)
+        const BASE_URL = "https://api.usesieve.com"; 
+        const apiUrl = `${BASE_URL}/api/v1/auth/register`;
+
+        const form = document.getElementById('api_signup');
+        const api_button = form.querySelector('button[type="submit"]');
+        const originalButtonText = api_button.textContent;
+
+        try {
+            // Send registration request
+            const response = await fetch(apiUrl, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    email: email,
+                    password: password,
+                    user_type: userType,
+                    full_name: fullName
+                })
+            });
+
+            const result = await response.json();
+
+            if (response.ok) {
+                api_button.classList.remove('chrome-button');
+                api_button.classList.add('success-button');
+                api_button.textContent = "✅ Registration successful! You may start using our API with your credentials.";
+                form.reset();
+            } else {
+                api_button.textContent = `❌ Error: ${result.message || "Something went wrong"}`;
+                api_button.className = "error";
+            }
+        } catch (error) {
+            api_button.textContent = "❌ Network error. Please try again.";
+            api_button.className = "error";
+        }
+    });
+
 }); 
 
 
+
+
+
+
+/*
 // Slideshow configuration
 const SLIDES = [
     'screenshot1.png',
@@ -325,3 +373,5 @@ function resetSlideInterval() {
     stopSlideshow();
     startSlideshow();
 }
+
+*/

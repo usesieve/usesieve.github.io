@@ -121,19 +121,30 @@
         </section>
 
         <!--Sign up for API access-->
-        <section id = "api_signup" class="signup">
+
+        <section class="min-h-screen flex flex-col items-center justify-center">
             <h1>Sign up now for API access</h1>
-            <form class="signup-form">
-                <input type="text" placeholder="Your Name" class="form-input" />
-                <input type="email" placeholder="Your Email" class="form-input" />
+            <form id="api_signup" class="w-full max-w-lg" action="https://formspree.io/f/myzyalpo" method="POST">
+                <div class="mb-4">
+                    <input type="text" id="full_name" placeholder="Full name" required 
+                        class="w-full p-2 rounded bg-gray-800 text-white">
+                </div>
+                <div class="mb-4">
+                    <input type="email" id="api_email" placeholder="Your Email" required 
+                        class="w-full p-2 rounded bg-gray-800 text-white">
+                </div>
+                <div class="mb-4">
+                    <input type="password" id="password" placeholder="Password" required 
+                        class="w-full p-2 rounded bg-gray-800 text-white">
+                </div>
                 <button type="submit" class="chrome-button w-full p-2 rounded">Sign up now</button>
             </form>
-            </section>
+        </section>
 
         <!--Contact us form-->
-        <section id="contact" class="min-h-screen flex flex-col items-center justify-center">
+        <section class="min-h-screen flex flex-col items-center justify-center">
             <h1>Contact us</h1>
-            <form class="w-full max-w-lg" action="https://formspree.io/f/myzyalpo" method="POST">
+            <form id="contact" class="w-full max-w-lg" action="https://formspree.io/f/myzyalpo" method="POST">
                 <div class="mb-4">
                     <input type="text" name="name" placeholder="Your Name" required 
                            class="w-full p-2 rounded bg-gray-800 text-white">
