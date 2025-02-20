@@ -25,7 +25,7 @@ function getCommonPrefix(str1, str2) {
 document.addEventListener('DOMContentLoaded', function() {
     //Demo signup button scrolling
     document.querySelector('.btn.btn-secondary').addEventListener('click', function () {
-    document.getElementById('api_signup').scrollIntoView({ behavior: 'smooth' });
+    document.getElementById('api_signup_title').scrollIntoView({ behavior: 'smooth' });
     });
 
     const textElement = document.getElementById('typed-text');
