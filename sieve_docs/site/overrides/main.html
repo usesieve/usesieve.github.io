@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block sidebar %}
+<div class="bs-sidebar hidden-print affix well" role="complementary">
+    <h3 style="color: red;">TEST - IF YOU SEE THIS, TEMPLATE IS WORKING</h3>
+    <ul class="nav bs-sidenav">
+        <!-- Always show both links -->
+        <li class="first-level {% if page.is_homepage %}active{% endif %}">
+            <a href="{{ base_url }}">Home</a>
+        </li>
+        <li class="first-level {% if not page.is_homepage %}active{% endif %}">
+            <a href="{{ base_url }}/quick_start_notebook/">Quick Start</a>
+        </li>
+    </ul>
+</div>
+{% endblock %}

@@ -77,3 +77,31 @@ h2, h3 {
     color: #5144A5;  /* Match the body text color */
     text-decoration: none;
 }
+
+/* Show all top-level navigation items */
+.bs-sidebar .nav {
+    display: block !important;
+}
+
+/* Add Quick Start link to sidebar */
+.bs-sidenav {
+    position: relative;
+}
+
+/* Override the default sidebar structure */
+.bs-sidenav .nav > li {
+    display: block !important;
+}
+
+/* Style for nav items */
+.bs-sidenav .nav > li > a {
+    color: #5144A5;
+    padding: 5px 20px;
+    display: block;
+}
+
+/* Style for active items */
+.bs-sidenav .nav > li.active > a {
+    font-weight: bold;
+    border-right: 2px solid #5144A5;
+}
