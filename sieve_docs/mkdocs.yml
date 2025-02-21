@@ -1,0 +1,10 @@
+site_name: Sieve Documentation
+
+nav:
+  - Home:  index.md
+  - Quick Start: quick_start_notebook.md
+
+theme: cinder
+
+extra_css:
+  - style.css

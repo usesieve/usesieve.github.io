@@ -1,0 +1,107 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+:root {
+    --wave-scroll-speed: 15s;
+    --wave-amplitude: 30px;
+    --wave-frequency: 2s;
+    --max-letter-rotation: 15deg;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Chrome text effect for headings */
+h1 {
+    background: linear-gradient(
+        45deg,
+        #ff00ff,
+        #00ffff,
+        #ff00ff,
+        #00ffff
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: chrome-animation 8s linear infinite;
+    background-size: 400% 400%;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+@keyframes chrome-animation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+} 
+
+
+h2, h3 {
+    color: #5144A5;
+}
+
+
+/* Button styling */
+.md-button {
+    background: linear-gradient(
+        45deg,
+        #ff00ff,
+        #00ffff,
+        #ff00ff,
+        #00ffff
+    );
+    background-size: 400% 400%;
+    animation: chrome-animation 8s linear infinite;
+    border: none;
+    color: white !important;
+    font-weight: bold;
+    transition: transform 0.2s;
+    padding: 10px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+}
+
+.md-button:hover {
+    transform: scale(1.05);
+}
+
+.navbar-default {
+    background-color: #5144A5;
+    border-bottom: 8px #EBF2F2 solid;
+}
+
+
+/* Set the side bar text color */
+.bs-sidenav a {
+    color: #5144A5;  /* Match the body text color */
+    text-decoration: none;
+}
+
+/* Show all top-level navigation items */
+.bs-sidebar .nav {
+    display: block !important;
+}
+
+/* Add Quick Start link to sidebar */
+.bs-sidenav {
+    position: relative;
+}
+
+/* Override the default sidebar structure */
+.bs-sidenav .nav > li {
+    display: block !important;
+}
+
+/* Style for nav items */
+.bs-sidenav .nav > li > a {
+    color: #5144A5;
+    padding: 5px 20px;
+    display: block;
+}
+
+/* Style for active items */
+.bs-sidenav .nav > li.active > a {
+    font-weight: bold;
+    border-right: 2px solid #5144A5;
+}

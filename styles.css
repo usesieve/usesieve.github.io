@@ -240,7 +240,7 @@ nav ul li a:hover {
     background: linear-gradient(45deg, #4ade80, #22c55e);
     color: gray;
     font-weight: bold;
-    transition: all 0.3s ease;
+    transition: all 0.1s ease;
     border: none;
     cursor: default;
 }

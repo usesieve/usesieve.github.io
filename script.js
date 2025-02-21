@@ -208,7 +208,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 })
             });
             const result = await response.json();
-            console.log(result);
 
             if (response.ok) {
                 api_button.classList.remove('chrome-button', 'error-state');

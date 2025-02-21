@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <link rel="shortcut icon" href="../img/favicon.ico">
+
+    
+    <title>Quick Start - Sieve Documentation</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../css/base.min.css" rel="stylesheet">
+    <link href="../css/cinder.min.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/github.min.css">
+        
+    
+    <link href="../style.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+
+            
+              <a class="navbar-brand" href="..">Sieve Documentation</a>
+            
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="..">Home</a>
+                    </li>
+                
+                
+                
+                    <li class="active">
+                        <a href="./">Quick Start</a>
+                    </li>
+                
+                
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fas fa-search"></i> Search
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="..">
+                            <i class="fas fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li class="disabled">
+                        <a rel="next" >
+                            Next <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#quick-start-guide-sieve-api">Quick Start Guide - Sieve API</a></li>
+            <li class="second-level"><a href="#if-you-dont-have-an-account-yet-register-one">If you don't have an account yet, register one</a></li>
+                
+            <li class="second-level"><a href="#if-you-have-an-account-log-in-to-get-an-authentication-token">If you have an account, log in to get an authentication token</a></li>
+                
+            <li class="second-level"><a href="#helper-functions">Helper Functions</a></li>
+                
+            <li class="second-level"><a href="#example-1-extract-data-from-pdf">Example 1: Extract Data from PDF</a></li>
+                
+                <li class="third-level"><a href="#check-for-results">Check for results</a></li>
+            <li class="second-level"><a href="#example-2-financial-document-analysis">Example 2: Financial Document Analysis</a></li>
+                
+            <li class="second-level"><a href="#example-3-credit-card-transaction-mapping">Example 3: Credit Card Transaction Mapping</a></li>
+                
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h1 id="quick-start-guide-sieve-api">Quick Start Guide - Sieve API</h1>
+<p>This notebook demonstrates how to use the Sieve API to extract structured data from various document types. We'll cover three common use cases:</p>
+<ol>
+<li>Extracting data points from a PDF</li>
+<li>Analyzing financial documents with specific parameters</li>
+<li>Mapping credit card transactions to merchant stock tickers</li>
+</ol>
+<pre><code class="language-python">import requests
+import json
+import time
+
+# API configuration
+# BASE_URL = 'https://api.usesieve.com' 
+BASE_URL = 'http://localhost:8080'  
+# Authentication credentials
+email = &quot;your.email@example.com&quot;
+password = &quot;your_password&quot;
+user_type = &quot;requester&quot;
+full_name = &quot;Tutorial User&quot;
+</code></pre>
+<h3 id="if-you-dont-have-an-account-yet-register-one">If you don't have an account yet, register one</h3>
+<pre><code class="language-python">registration_response = requests.post(f&quot;{BASE_URL}/api/v1/auth/register&quot;, json={
+        &quot;email&quot;: email,
+        &quot;password&quot;: password,
+        &quot;user_type&quot;: user_type,
+        &quot;full_name&quot;: full_name
+    })
+registration_response.json()
+</code></pre>
+<pre><code>{'token': 'eyJhbGciOiAiUlMyNTYiLCAidHlwIjogIkpXVCIsICJraWQiOiAiOTQ0YmZiYzg4MTkwNjY3ZjgwMjllZDRiOWQ4OWZmNGMyMzM1YWY1NSJ9.eyJpc3MiOiAiNTAxNzY0MjgzMTM1LWNvbXB1dGVAZGV2ZWxvcGVyLmdzZXJ2aWNlYWNjb3VudC5jb20iLCAic3ViIjogIjUwMTc2NDI4MzEzNS1jb21wdXRlQGRldmVsb3Blci5nc2VydmljZWFjY291bnQuY29tIiwgImF1ZCI6ICJodHRwczovL2lkZW50aXR5dG9vbGtpdC5nb29nbGVhcGlzLmNvbS9nb29nbGUuaWRlbnRpdHkuaWRlbnRpdHl0b29sa2l0LnYxLklkZW50aXR5VG9vbGtpdCIsICJ1aWQiOiAiN0tLZzA1MXU5c2ZOZEtlbzJFd2dqT3JHNkV4MiIsICJpYXQiOiAxNzM5OTgxODQ4LCAiZXhwIjogMTczOTk4NTQ0OH0.kiLTVP6SRJSbNJH1HQ3BtDKMNfOUneRWModCwz22O5B4wKMS51TmfJMUlgdAc6eFUB1Jbp2tQjb7fY3s4MOwl4TnV1UCQ18BH0-b3wJh6bad0DXtSKbTIADvKkvJtJupGxWf5ErCV3lw6XN9npz4cukngw_-YGrj4YXd97tPnMjZxXG6GPEwxGEF5keQjyLdO2e5T35tUGnXcI-TzNtLQUenyo_3LF31vAPwJl2Oz7f6mLpeejQPcwvmN1Pj9DggiUSiuQLPgB7njShcSlebiOwoEqW38X3UfcM0-03GGYdPuJuQ7THvbfks1HGFFQzqIMX4nHGF21rq3CymmqMHaw',
+ 'user_id': '7KKg051u9sfNdKeo2EwgjOrG6Ex2',
+ 'user_type': 'requester'}
+</code></pre>
+<h3 id="if-you-have-an-account-log-in-to-get-an-authentication-token">If you have an account, log in to get an authentication token</h3>
+<pre><code class="language-python">login_result = requests.post(f&quot;{BASE_URL}/api/v1/auth/login&quot;, json={
+        &quot;email&quot;: email,
+        &quot;password&quot;: password
+    })
+if login_result.status_code == 200:
+    print(&quot;Login successful!&quot;)
+elif login_result.status_code != 200:
+    print(&quot;Login failed. Check your credentials again.&quot;)
+# Save the token for future API calls
+token = login_result.json().get('token')
+# Set the token in your header
+headers = {
+    'Authorization': f'Bearer {token}',
+    'Content-Type': 'application/json'
+}
+</code></pre>
+<pre><code>Login successful!
+</code></pre>
+<h2 id="helper-functions">Helper Functions</h2>
+<p>Let's define some helper functions to interact with the API and check job status.</p>
+<pre><code class="language-python">def submit_job(document_type, content, metadata=None):
+    url = f'{BASE_URL}/process'
+    payload = {
+        'document_type': document_type,
+        'content': content,
+        'metadata': metadata or {}
+    }
+    response = requests.post(url, headers=headers, json=payload)
+    response.raise_for_status()
+    return response.json()
+
+def check_job_status(job_id):
+    url = f'{BASE_URL}/status/{job_id}'
+    response = requests.get(url, headers=headers)
+    response.raise_for_status()
+    return response.json()
+
+def wait_for_completion(job_id, max_attempts=30, delay=60):
+    for _ in range(max_attempts):
+        status = check_job_status(job_id)
+        if status['status'] == 'completed':
+            return status
+        elif status['status'] == 'failed':
+            raise Exception(f'Job failed: {status.get(&quot;error&quot;, &quot;Unknown error&quot;)}')
+        time.sleep(delay)
+    raise TimeoutError('Job did not complete within the expected time')
+</code></pre>
+<h2 id="example-1-extract-data-from-pdf">Example 1: Extract Data from PDF</h2>
+<p>Let's extract specific data points from a PDF document.</p>
+<pre><code class="language-python">response = requests.post(f'{BASE_URL}/api/v1/process', headers=headers, json={
+    &quot;document_type&quot;: &quot;pdf&quot;,
+    &quot;metadata&quot;: {
+        &quot;url&quot;: &quot;https://www.cecafe.com.br/site/wp-content/uploads/2023/03/CECAFE-Monthly-Coffee-Report-JANUARY-2025.pdf&quot;,
+        'data_points': ['Coffee export volume in most recent period (USD)']
+    }
+})
+response.raise_for_status()
+job_id = response.json().get(&quot;job_id&quot;)
+print(&quot;job id: &quot;, job_id)
+
+# # Wait for completion and get results
+# final_result = wait_for_completion(result['job_id'])
+# print(json.dumps(final_result, indent=2))
+</code></pre>
+<pre><code>job id:  t1mPRc2JtlCKYtia1uPg
+</code></pre>
+<h3 id="check-for-results">Check for results</h3>
+<pre><code class="language-python">url = f'{BASE_URL}/api/v1/status/{job_id}'
+response = requests.get(url, headers=headers)
+response.raise_for_status()
+response.json()
+print(&quot;status:&quot;, response.json().get(&quot;status&quot;))
+if response.json().get(&quot;status&quot;) == &quot;completed&quot;:
+    print(&quot;response:&quot;, response.json().get(&quot;ai_result&quot;).get(&quot;result&quot;))
+</code></pre>
+<pre><code>status: completed
+response: {'Coffee export volume in most recent period (USD)': '1,315,849.2'}
+</code></pre>
+<h2 id="example-2-financial-document-analysis">Example 2: Financial Document Analysis</h2>
+<p>Extract specific financial data points from SEC filings or other financial documents.</p>
+<pre><code class="language-python">response = requests.post(f'{BASE_URL}/api/v1/process', headers=headers, json={
+    &quot;document_type&quot;: &quot;sec&quot;,
+    &quot;content&quot;: &quot;None&quot;,
+    &quot;metadata&quot;: {
+        'ticker': 'AAPL',
+        'metrics': [&quot;geographic distribution of revenue&quot;]
+    }
+})
+response.raise_for_status()
+job_id = response.json().get(&quot;job_id&quot;)
+print(&quot;job id: &quot;, job_id)
+
+
+</code></pre>
+<pre><code>job id:  5pwVuIuEm3ybBvTBBHcx
+</code></pre>
+<pre><code class="language-python">url = f'{BASE_URL}/api/v1/status/{job_id}'
+response = requests.get(url, headers=headers)
+response.raise_for_status()
+response.json()
+print(&quot;status:&quot;, response.json().get(&quot;status&quot;))
+if response.json().get(&quot;status&quot;) == &quot;completed&quot;:
+    print(&quot;response:&quot;, response.json().get(&quot;ai_result&quot;).get(&quot;result&quot;))
+</code></pre>
+<pre><code>status: completed
+response: {'revenue_by_geography': None}
+</code></pre>
+<h2 id="example-3-credit-card-transaction-mapping">Example 3: Credit Card Transaction Mapping</h2>
+<p>Map a credit card transaction description to a merchant's stock ticker.</p>
+<pre><code class="language-python">response = requests.post(f'{BASE_URL}/api/v1/process', headers=headers, json={
+    &quot;document_type&quot;: &quot;credit_card&quot;,
+    &quot;metadata&quot; : {
+        &quot;transaction&quot;: &quot;WHOLEFDS MKT 10259 AUSTIN TX&quot;,
+        'transaction_date': '2024-01-15',
+        'amount': 156.78,
+        &quot;data_points&quot;: [&quot;merchant stock ticker&quot;]
+    }
+})
+response.raise_for_status()
+job_id = response.json().get(&quot;job_id&quot;)
+print(&quot;job id: &quot;, job_id)
+
+
+
+</code></pre>
+<pre><code>job id:  synGikSyt7Tpiag6S6OE
+</code></pre>
+<pre><code class="language-python"># Wait for completion and get results
+final_result = wait_for_completion(result['job_id'])
+print(json.dumps(final_result, indent=2))
+</code></pre></div>
+        
+        
+    </div>
+
+    
+      <footer class="col-md-12 text-center">
+          
+          
+            <hr>
+            <p>
+            <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</small>
+            </p>
+          
+
+          
+          
+      </footer>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../js/bootstrap-3.0.3.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+        
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    <script>var base_url = ".."</script>
+    
+    <script src="../js/base.js"></script>
+    <script src="../search/main.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>
