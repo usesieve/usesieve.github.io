@@ -108,3 +108,27 @@ h2, h3 {
     border-right: 2px solid #5144A5;
 }
 
+
+/* Code block styling */
+/* Inline code */
+code {
+    background-color: #f5f5f5 !important;
+    color: #000000!important;
+}
+
+/* Syntax highlighting colors */
+.hljs-keyword {
+    color: #569cd9 !important;  /* Blue for keywords */
+}
+
+.hljs-string {
+    color: #831b54 !important;  /* Purple for strings */
+}
+
+.hljs-number {
+    color: #5144A5 !important;  /* dark pink for numbers */
+}
+
+.hljs-comment {
+    color: #6a9955 !important;  /* Green for comments */
+}

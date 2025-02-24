@@ -106,28 +106,64 @@
 
     <div class="container">
         
-        
-        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
-    <ul class="nav bs-sidenav">
-        <li class="first-level active"><a href="#quick-start-guide-sieve-api">Quick Start Guide - Sieve API</a></li>
-            <li class="second-level"><a href="#if-you-dont-have-an-account-yet-register-one">If you don't have an account yet, register one</a></li>
-                
-            <li class="second-level"><a href="#if-you-have-an-account-log-in-to-get-an-authentication-token">If you have an account, log in to get an authentication token</a></li>
-                
-            <li class="second-level"><a href="#helper-functions">Helper Functions</a></li>
-                
-            <li class="second-level"><a href="#example-1-extract-data-from-pdf">Example 1: Extract Data from PDF</a></li>
-                
-                <li class="third-level"><a href="#check-for-results">Check for results</a></li>
-            <li class="second-level"><a href="#example-2-financial-document-analysis">Example 2: Financial Document Analysis</a></li>
-                
-            <li class="second-level"><a href="#example-3-credit-card-transaction-mapping">Example 3: Credit Card Transaction Mapping</a></li>
-                
-    </ul>
-</div></div>
-        <div class="col-md-9" role="main">
+    <div class="container">
+        <div class="col-md-3">
+            <div class="bs-sidebar hidden-print affix well" role="complementary">
+                <ul class="nav bs-sidenav">
+                    <!-- Home with its subpages -->
+                    <li class="first-level ">
+                        <a href="../">Home</a>
+                        <ul class="nav">
+                            
+                            <li><a href="../#welcome-to-sieve-documentation">Welcome to Sieve Documentation</a></li>
+                                
+                            
+                        </ul>
+                    </li>
 
-<h1 id="quick-start-guide-sieve-api">Quick Start Guide - Sieve API</h1>
+                    <!-- Quick Start with its subpages -->
+                    <li class="first-level active">
+                        <a href="../quick_start_notebook/">Quick Start</a>
+                        <ul class="nav">
+                            
+                            <li><a href="../quick_start_notebook/#quick-start-guide-sieve-api">Quick Start Guide - Sieve API</a></li>
+                                
+                                <ul class="nav">
+                                    
+                                    <li><a href="../quick_start_notebook/#if-you-dont-have-an-account-yet-register-one">If you don't have an account yet, register one</a></li>
+                                        
+                                    
+                                    <li><a href="../quick_start_notebook/#if-you-have-an-account-log-in-to-get-an-authentication-token">If you have an account, log in to get an authentication token</a></li>
+                                        
+                                    
+                                    <li><a href="../quick_start_notebook/#helper-functions">Helper Functions</a></li>
+                                        
+                                    
+                                    <li><a href="../quick_start_notebook/#example-1-extract-data-from-pdf">Example 1: Extract Data from PDF</a></li>
+                                        
+                                        <ul class="nav">
+                                            
+                                            <li><a href="../quick_start_notebook/#check-for-results">Check for results</a></li>
+                                            
+                                        </ul>
+                                        
+                                    
+                                    <li><a href="../quick_start_notebook/#example-2-financial-document-analysis">Example 2: Financial Document Analysis</a></li>
+                                        
+                                    
+                                    <li><a href="../quick_start_notebook/#example-3-credit-card-transaction-mapping">Example 3: Credit Card Transaction Mapping</a></li>
+                                        
+                                    
+                                </ul>
+                                
+                            
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-9" role="main">
+            <h1 id="quick-start-guide-sieve-api">Quick Start Guide - Sieve API</h1>
 <p>This notebook demonstrates how to use the Sieve API to extract structured data from various document types. We'll cover three common use cases:</p>
 <ol>
 <li>Extracting data points from a PDF</li>
@@ -291,9 +327,10 @@ print(&quot;job id: &quot;, job_id)
 <pre><code class="language-python"># Wait for completion and get results
 final_result = wait_for_completion(result['job_id'])
 print(json.dumps(final_result, indent=2))
-</code></pre></div>
-        
-        
+</code></pre>
+        </div>
+    </div>
+
     </div>
 
     

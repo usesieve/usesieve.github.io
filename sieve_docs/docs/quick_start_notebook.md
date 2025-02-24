@@ -1,5 +1,4 @@
 
-
 # Quick Start Guide - Sieve API
 
 This notebook demonstrates how to use the Sieve API to extract structured data from various document types. We'll cover three common use cases:
@@ -16,8 +15,7 @@ import json
 import time
 
 # API configuration
-# BASE_URL = 'https://api.usesieve.com' 
-BASE_URL = 'http://localhost:8080'  
+BASE_URL = 'https://api.usesieve.com' 
 # Authentication credentials
 email = "your.email@example.com"
 password = "your_password"

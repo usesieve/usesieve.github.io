@@ -1,16 +1,62 @@
 {% extends "base.html" %}
 
-{% block sidebar %}
-<div class="bs-sidebar hidden-print affix well" role="complementary">
-    <h3 style="color: red;">TEST - IF YOU SEE THIS, TEMPLATE IS WORKING</h3>
-    <ul class="nav bs-sidenav">
-        <!-- Always show both links -->
-        <li class="first-level {% if page.is_homepage %}active{% endif %}">
-            <a href="{{ base_url }}">Home</a>
-        </li>
-        <li class="first-level {% if not page.is_homepage %}active{% endif %}">
-            <a href="{{ base_url }}/quick_start_notebook/">Quick Start</a>
-        </li>
-    </ul>
-</div>
+{% block content %}
+    <div class="container">
+        <div class="col-md-3">
+            <div class="bs-sidebar hidden-print affix well" role="complementary">
+                <ul class="nav bs-sidenav">
+                    <!-- Home with its subpages -->
+                    <li class="first-level {% if page.is_homepage %}active{% endif %}">
+                        <a href="{{ base_url }}/">Home</a>
+                        <ul class="nav">
+                            {% for toc_item in nav.pages[0].toc.items %}
+                            <li><a href="{{ base_url }}/{{ toc_item.url }}">{{ toc_item.title }}</a></li>
+                                {% if toc_item.children %}
+                                <ul class="nav">
+                                    {% for child in toc_item.children %}
+                                    <li><a href="{{ base_url }}/{{ child.url }}">{{ child.title }}</a></li>
+                                        {% if child.children %}
+                                        <ul class="nav">
+                                            {% for grandchild in child.children %}
+                                            <li><a href="{{ base_url }}/{{ grandchild.url }}">{{ grandchild.title }}</a></li>
+                                            {% endfor %}
+                                        </ul>
+                                        {% endif %}
+                                    {% endfor %}
+                                </ul>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </li>
+
+                    <!-- Quick Start with its subpages -->
+                    <li class="first-level {% if not page.is_homepage %}active{% endif %}">
+                        <a href="{{ base_url }}/quick_start_notebook/">Quick Start</a>
+                        <ul class="nav">
+                            {% for toc_item in nav.pages[1].toc.items %}
+                            <li><a href="{{ base_url }}/quick_start_notebook/{{ toc_item.url }}">{{ toc_item.title }}</a></li>
+                                {% if toc_item.children %}
+                                <ul class="nav">
+                                    {% for child in toc_item.children %}
+                                    <li><a href="{{ base_url }}/quick_start_notebook/{{ child.url }}">{{ child.title }}</a></li>
+                                        {% if child.children %}
+                                        <ul class="nav">
+                                            {% for grandchild in child.children %}
+                                            <li><a href="{{ base_url }}/quick_start_notebook/{{ grandchild.url }}">{{ grandchild.title }}</a></li>
+                                            {% endfor %}
+                                        </ul>
+                                        {% endif %}
+                                    {% endfor %}
+                                </ul>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-9" role="main">
+            {{ page.content }}
+        </div>
+    </div>
 {% endblock %}
