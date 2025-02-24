@@ -25,7 +25,7 @@ function getCommonPrefix(str1, str2) {
 document.addEventListener('DOMContentLoaded', function() {
     //Demo signup button scrolling
     document.querySelector('.btn.btn-secondary').addEventListener('click', function () {
-    document.getElementById('api_signup_title').scrollIntoView({ behavior: 'smooth' });
+    document.getElementById('api_signup_section').scrollIntoView({ behavior: 'smooth' });
     });
 
     const textElement = document.getElementById('typed-text');
@@ -227,6 +227,11 @@ document.addEventListener('DOMContentLoaded', function() {
             api_button.textContent = `❌ Error: ${error.message || "Something went wrong"}`;
             form.reset();
         }
+    });
+
+    document.getElementById("menu-toggle").addEventListener("click", function() {
+        const mobileMenu = document.getElementById("mobile-menu");
+        mobileMenu.classList.toggle("hidden"); // Toggle the hidden class on mobile-menu
     });
 
 }); 

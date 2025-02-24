@@ -19,6 +19,14 @@ body {
         
 }
 
+
+h1 {
+    margin-bottom: 50px;
+    text-align: center;
+    font-size: xx-large;
+    color: aliceblue;
+}
+
 .background-container {
     position: fixed;
     top: 0;
@@ -133,7 +141,6 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 10px 10px;
-    background-color: white;
     color: black;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
     z-index: 1000;
@@ -143,34 +150,6 @@ header {
 .header-left {
     display: flex;
     align-items: center; /* Align logo and nav in the center */
-}
-
-nav {
-    flex-grow: 1; /* Allows it to take remaining space */
-    display: flex;
-    justify-content: flex-end; /* Pushes menu to the right */
-}
-
-
-nav ul {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-nav ul li {
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: black;
-    text-decoration: none;
-    font-size: 16px;
-}
-
-nav ul li a:hover {
-    color: #f39c12;
 }
 
 
@@ -247,8 +226,6 @@ form button {
     margin-top: 0px;
   }
 
-
-  
   .btn {
     padding: 10px;
     border-radius: 30px;
@@ -325,27 +302,15 @@ form button {
   }
 
 /*Video demo*/ 
-
-.video-section {
-    text-align: center;
-    padding: 100px;
-}
-
-.video-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+#video_section video {
     width: 100%;
-}
-
-video {
-    width: 80%;
     max-width: 800px;
     border-radius: 12px;
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
 }
 
-/* Add these to your existing styles */
+
+/* Use case section */
 .usecase-card {
     background: rgba(17, 24, 39, 0.7);
     backdrop-filter: blur(10px);
@@ -397,6 +362,7 @@ video {
                    0 0 25px rgba(0, 255, 255, 0.2);
     }
 }
+
 
 /* Smooth scroll behavior */
 html {
@@ -581,16 +547,51 @@ section {
 
 
 
-
-h1 {
-    margin-bottom: 50px;
-    text-align: center;
-    font-size: xx-large;
-    color: aliceblue;
-}
-
 /* Mobile-friendly adjustments */
 @media (max-width: 768px) {
+
+
+    /* Fix title sizes and centering */
+    h1 {
+        font-size: 1.75rem !important;
+        line-height: 1.3;
+        padding: 0 0.25rem;
+        text-align: center;
+        max-width: 90%;
+    }
+
+
+    /* Layout containers */
+    .content-container,
+    .image-container,
+    main,
+    .use_case_section,
+    .video_section,
+    .contact_us_section,
+    .api_signup_section {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 0.5rem;
+    }
+
+
+    video,
+    .image-container img{
+        width: 100%;
+        height: auto;
+    }
+
+    form {
+        width: 100%;
+        padding: 0 0.5rem;
+    }
+
+
     /* Center buttons */
     .hero-buttons {
         display: flex;
@@ -609,180 +610,12 @@ h1 {
     }
 
 
-    /* Fix title sizes and centering */
-    h1 {
-        font-size: 1.75rem !important;
-        line-height: 1.3;
-        padding: 0 0.25rem;
-        text-align: center;
-        max-width: 90%;
-    }
-
-    /* Center all content */
-    .content-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 0.5rem;
-        width: 100%;
-        max-width: 100%;
-        margin: 0;
-    }
-
-
-    .video-section {
-        width: 100%;
-        max-width: 100%;
-        padding: 0 1rem;
-        margin: 0;
-    }
-
-
-    video {
-        width: 100%;
-        height: auto;
-    }
-
-    /* Center main content */
-    main {
-        width: 100%;
-        max-width: 100%;
-        padding: 0;
-        margin: 0;
-    }
-
-    /* Image container adjustments */
-    .image-container {
-        width: 100%;
-        max-width: 100%;
-        padding: 0 1rem;
-        margin: 2rem auto;
-        text-align: center;
-    }
-
-    .image-container img {
-        max-width: 100%;
-        height: auto;
-    }
-
-    .content-container {
-        padding: 1rem;
-        margin-top: 4rem;
-    }
-
     .fixed-background {
         height: 100vh;
         object-fit: cover;
     }
 
-    .header-left {
-        padding: 0.5rem 1rem;
-    }
 }
 
 
-/* Mobile Menu Styles */
-.menu-toggle {
-    font-size: 1.5rem;
-    cursor: pointer;
-    display: none;  /* Combined the duplicate menu-toggle styles */
-}
-
-#mobile-menu {
-    transition: all 0.3s ease;
-}
-
-/* Mobile-friendly adjustments */
-@media screen and (max-width: 768px) {
-    /* Navigation */
-    .menu-toggle {
-        display: block;
-    }
-
-    nav ul {
-        display: none;
-        flex-direction: column;
-        background-color: #333;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        width: 200px;
-        text-align: right;
-    }
-
-    nav ul.show {
-        display: flex;
-    }
-
-    /* Layout containers */
-    .content-container,
-    main,
-    .video-section {
-        width: 100%;
-        max-width: 100%;
-        padding: 0;
-        margin: 0;
-    }
-
-    .content-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 1rem;
-        margin-top: 4rem;
-    }
-
-    /* Hero section */
-    .hero-buttons {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-        width: 100%;
-        margin: 2rem auto;
-    }
-
-    #typed-text {
-        font-size: 3rem !important;
-        line-height: 1.3;
-        padding: 0 1rem;
-    }
-
-    /* Typography */
-    h1 {
-        font-size: 1.75rem !important;
-        line-height: 1.3;
-        padding: 0 0.25rem;
-        text-align: center;
-        max-width: 90%;
-    }
-
-    /* Media */
-    .image-container,
-    .video-section {
-        width: 100%;
-        max-width: 100%;
-        padding: 0 1rem;
-        margin: 2rem auto;
-        text-align: center;
-    }
-
-    video,
-    .image-container img,
-    .fixed-background {
-        width: 100%;
-        height: auto;
-    }
-
-    .fixed-background {
-        height: 100vh;
-        object-fit: cover;
-    }
-
-    /* Header */
-    .header-left {
-        padding: 0.5rem 1rem;
-    }
-}
+   

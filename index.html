@@ -21,22 +21,10 @@
                 <div class="w-16 h-16 md:w-20 md:h-20 logo-container">
                     <img src="images/sieve_logo.svg" alt="Sieve Logo" class="w-full h-full">
                 </div>
-                <nav class="hidden md:block ml-4">
-                    <ul class="flex space-x-6">
-                        <li><a href="/" class="text-white hover:text-gray-300">Home</a></li>
-                        <li><a href="sieve_docs/site/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-gray-300">Docs <i class="fas fa-external-link-alt"></i></a></li>
-                    </ul>
-                </nav>
             </div>
-            <button class="md:hidden text-white menu-toggle" onclick="toggleMenu()">☰</button>
-        </div>
-        <!-- Mobile menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-black w-full">
-            <nav class="px-4 py-2">
-                <ul class="space-y-2">
-                    <li><a href="/" class="block text-white hover:text-gray-300 py-2">Home</a></li>
-                    <li><a href="sieve_docs/site/" target="_blank" rel="noopener noreferrer" class="block text-white hover:text-gray-300 py-2">Docs <i class="fas fa-external-link-alt"></i></a></li>
-                </ul>
+            <nav id="nav_menu" class="flex space-x-4">
+                <a href="/" class="text-white hover:text-gray-300">Home</a>
+                <a href="sieve_docs/site/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-gray-300">Docs <i class="fas fa-external-link-alt"></i></a>
             </nav>
         </div>
     </header>
@@ -90,20 +78,18 @@
 
 
         <!--Video demo-->
-        <div class="video-section">
+        <section id="video_section" class="min-h-screen flex flex-col items-center justify-center">
             <h1>Obtain high quality data rapidly without compromising on accuracy</h1>
-            <div class="video-container">
-                <video controls>
-                    <source src="/videos/sieve_demo_video_feb_2025.mp4" type="video/mp4">
-                </video>
-            </div>
+            <video controls>
+                <source src="/videos/sieve_demo_video_feb_2025.mp4" type="video/mp4">
+            </video>
         </div>
 
         
         <!--Example use cases-->
-        <section class="min-h-screen flex flex-col items-center justify-center py-16">
-            <h2 class="text-5xl font-bold mb-4 chrome-text">Example usecases</h2>
-            <p class="text-xl text-white mb-16 subtitle">Our agents can handle your most common data tasks</p>
+        <section id = "use_case_section" class="min-h-screen flex flex-col items-center justify-center py-16">
+            <h2 class="text-5xl font-bold mb-4 chrome-text text-center w-full">Example usecases</h2>
+            <p class="text-xl text-white mb-16 subtitle text-center w-full">Our agents can handle your most common data tasks</p>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto px-4">
                 <!-- Card 1 -->
@@ -146,7 +132,7 @@
 
         <!--Sign up for API access-->
 
-        <section id = "api_signup_title" class="min-h-screen flex flex-col items-center justify-center">
+        <section id = "api_signup_section" class="min-h-screen flex flex-col items-center justify-center">
             <h1>Sign up now for API access</h1>
             <form id="api_signup" class="w-full max-w-lg" action="https://formspree.io/f/myzyalpo" method="POST">
                 <div class="mb-4">
@@ -166,7 +152,7 @@
         </section>
 
         <!--Contact us form-->
-        <section class="min-h-screen flex flex-col items-center justify-center">
+        <section id = "contact_us_section" class="min-h-screen flex flex-col items-center justify-center">
             <h1>Contact us</h1>
             <form id="contact" class="w-full max-w-lg" action="https://formspree.io/f/myzyalpo" method="POST">
                 <div class="mb-4">
@@ -187,11 +173,6 @@
     </div>
 
     <script src="script.js"></script>
-    <script>
-        function toggleMenu() {
-            const mobileMenu = document.getElementById('mobile-menu');
-            mobileMenu.classList.toggle('hidden');
-        }
-    </script>
+
 </body>
 </html> 
