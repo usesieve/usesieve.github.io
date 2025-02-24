@@ -572,12 +572,20 @@ section {
     }
 
 
-    video,
-    .image-container img{
+    video{
         width: 100%;
         height: auto;
         min-height: 200px;
         opacity: 1;
+    }
+
+    .image-container img {
+        width: 100%;
+        height: auto;
+        min-height: 200px;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
     }
 
     form {
