@@ -173,33 +173,6 @@ nav ul li a:hover {
     color: #f39c12;
 }
 
-/* Mobile Menu Button */
-.menu-toggle {
-    display: none;
-    font-size: 24px;
-    cursor: pointer;
-}
-
-@media screen and (max-width: 768px) {
-    nav ul {
-        display: none;
-        flex-direction: column;
-        background-color: #333;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        width: 200px;
-        text-align: right;
-    }
-
-    nav ul.show {
-        display: flex;
-    }
-
-    .menu-toggle {
-        display: block;
-    }
-}
 
 .logo-container {
     filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.5));
@@ -706,17 +679,110 @@ h1 {
     .header-left {
         padding: 0.5rem 1rem;
     }
-
-    
 }
 
-/* Menu toggle button */
+
+/* Mobile Menu Styles */
 .menu-toggle {
     font-size: 1.5rem;
     cursor: pointer;
+    display: none;  /* Combined the duplicate menu-toggle styles */
 }
 
-/* Mobile menu */
 #mobile-menu {
     transition: all 0.3s ease;
+}
+
+/* Mobile-friendly adjustments */
+@media screen and (max-width: 768px) {
+    /* Navigation */
+    .menu-toggle {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: #333;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        text-align: right;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    /* Layout containers */
+    .content-container,
+    main,
+    .video-section {
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .content-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 1rem;
+        margin-top: 4rem;
+    }
+
+    /* Hero section */
+    .hero-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        width: 100%;
+        margin: 2rem auto;
+    }
+
+    #typed-text {
+        font-size: 3rem !important;
+        line-height: 1.3;
+        padding: 0 1rem;
+    }
+
+    /* Typography */
+    h1 {
+        font-size: 1.75rem !important;
+        line-height: 1.3;
+        padding: 0 0.25rem;
+        text-align: center;
+        max-width: 90%;
+    }
+
+    /* Media */
+    .image-container,
+    .video-section {
+        width: 100%;
+        max-width: 100%;
+        padding: 0 1rem;
+        margin: 2rem auto;
+        text-align: center;
+    }
+
+    video,
+    .image-container img,
+    .fixed-background {
+        width: 100%;
+        height: auto;
+    }
+
+    .fixed-background {
+        height: 100vh;
+        object-fit: cover;
+    }
+
+    /* Header */
+    .header-left {
+        padding: 0.5rem 1rem;
+    }
 }
