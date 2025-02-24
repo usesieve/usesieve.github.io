@@ -100,6 +100,21 @@ document.addEventListener('DOMContentLoaded', function() {
     // Start the typing animation
     setTimeout(typeText, 500);
 
+    //code snippet glow, fades as user scrolls 
+    window.addEventListener("scroll", function() {
+        let image = document.getElementById("fadeImage");
+        let windowHeight = window.innerHeight;
+        let scrollY = window.scrollY + windowHeight / 2;
+        let imageOffset = image.getBoundingClientRect().top + scrollY;
+        let imageHeight = (image.getBoundingClientRect().top + image.getBoundingClientRect().bottom)
+        
+        let opacity = Math.max(0.35, 1.4 - Math.abs(scrollY - imageHeight) / windowHeight);
+        image.style.opacity = opacity;
+        // Add a fuchsia glow that fades with opacity
+        let glowIntensity = opacity * 50;  // Adjust 50 to control the glow size
+        image.style.boxShadow = `0 0 ${glowIntensity}px ${glowIntensity / 2}px fuchsia`;
+    });
+
 
     // Handle contact us form submission
     const form = document.getElementById('contact');
@@ -227,11 +242,6 @@ document.addEventListener('DOMContentLoaded', function() {
             api_button.textContent = `❌ Error: ${error.message || "Something went wrong"}`;
             form.reset();
         }
-    });
-
-    document.getElementById("menu-toggle").addEventListener("click", function() {
-        const mobileMenu = document.getElementById("mobile-menu");
-        mobileMenu.classList.toggle("hidden"); // Toggle the hidden class on mobile-menu
     });
 
 }); 
