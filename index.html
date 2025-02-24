@@ -7,6 +7,7 @@
     <link rel="icon" type="image/svg+xml" href="images/sieve_logo.svg">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- Adds typing animation functionality-->
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
@@ -14,19 +15,30 @@
 
 <body class="bg-black min-h-screen">
     <!--Header, including logo-->
-    <header>
-        <div class="header-left">
-            <div class="w-20 h-20 items-center logo-container">
-                <img src="images/sieve_logo.svg" alt="Sieve Logo" class="w-full h-full">
+    <header class="fixed top-0 w-full z-50 bg-black">
+        <div class="header-left flex items-center justify-between px-4 py-2">
+            <div class="flex items-center">
+                <div class="w-16 h-16 md:w-20 md:h-20 logo-container">
+                    <img src="images/sieve_logo.svg" alt="Sieve Logo" class="w-full h-full">
+                </div>
+                <nav class="hidden md:block ml-4">
+                    <ul class="flex space-x-6">
+                        <li><a href="/" class="text-white hover:text-gray-300">Home</a></li>
+                        <li><a href="sieve_docs/site/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-gray-300">Docs <i class="fas fa-external-link-alt"></i></a></li>
+                    </ul>
+                </nav>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="sieve_docs/site/" target="_blank" rel="noopener noreferrer">Docs ↗</a></li>
+            <button class="md:hidden text-white menu-toggle" onclick="toggleMenu()">☰</button>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-black w-full">
+            <nav class="px-4 py-2">
+                <ul class="space-y-2">
+                    <li><a href="/" class="block text-white hover:text-gray-300 py-2">Home</a></li>
+                    <li><a href="sieve_docs/site/" target="_blank" rel="noopener noreferrer" class="block text-white hover:text-gray-300 py-2">Docs <i class="fas fa-external-link-alt"></i></a></li>
                 </ul>
             </nav>
         </div>
-        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
     </header>
     
     
@@ -37,7 +49,7 @@
     </div>
     
     <!--Homepage body-->
-    <div class="content-container">
+    <div class="content-container pt-24 md:pt-32">
     
         <!--Subtitle-->
         <main class="min-h-screen flex flex-col items-center justify-center">
@@ -175,5 +187,11 @@
     </div>
 
     <script src="script.js"></script>
+    <script>
+        function toggleMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        }
+    </script>
 </body>
 </html> 

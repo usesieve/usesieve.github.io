@@ -615,3 +615,108 @@ h1 {
     font-size: xx-large;
     color: aliceblue;
 }
+
+/* Mobile-friendly adjustments */
+@media (max-width: 768px) {
+    /* Center buttons */
+    .hero-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        width: 100%;
+        margin: 2rem auto;
+    }
+
+    /* Adjust typing text size */
+    #typed-text {
+        font-size: 3rem !important;
+        line-height: 1.3;
+        padding: 0 1rem;
+    }
+
+
+    /* Fix title sizes and centering */
+    h1 {
+        font-size: 1.75rem !important;
+        line-height: 1.3;
+        padding: 0 0.25rem;
+        text-align: center;
+        max-width: 90%;
+    }
+
+    /* Center all content */
+    .content-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 0.5rem;
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+    }
+
+
+    .video-section {
+        width: 100%;
+        max-width: 100%;
+        padding: 0 1rem;
+        margin: 0;
+    }
+
+
+    video {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Center main content */
+    main {
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    /* Image container adjustments */
+    .image-container {
+        width: 100%;
+        max-width: 100%;
+        padding: 0 1rem;
+        margin: 2rem auto;
+        text-align: center;
+    }
+
+    .image-container img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .content-container {
+        padding: 1rem;
+        margin-top: 4rem;
+    }
+
+    .fixed-background {
+        height: 100vh;
+        object-fit: cover;
+    }
+
+    .header-left {
+        padding: 0.5rem 1rem;
+    }
+
+    
+}
+
+/* Menu toggle button */
+.menu-toggle {
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Mobile menu */
+#mobile-menu {
+    transition: all 0.3s ease;
+}
