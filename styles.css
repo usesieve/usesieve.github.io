@@ -481,6 +481,8 @@ html {
 /* Add a subtle transition effect when scrolling to sections */
 section {
     transition: opacity 0.3s ease;
+    padding: 3rem 0;  /* Add consistent padding top and bottom */
+    min-height: 100vh;
 }
 
 /* Make the card content fill available space */
