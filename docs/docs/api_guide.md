@@ -1,5 +1,5 @@
 
-# Quick Start Guide - Sieve API
+# Sieve API Quick Start Guide
 
 This notebook demonstrates how to use the Sieve API to extract structured data from various document types. We'll cover three common use cases:
 

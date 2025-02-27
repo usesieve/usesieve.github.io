@@ -2,7 +2,8 @@ site_name: Sieve Documentation
 
 nav:
   - Home: index.md
-  - Quick Start: quick_start_notebook.md
+  - API Quick Start Guide: api_guide.md
+  - UI Quick Start Guide: ui_guide.md
 
 theme:
   name: cinder
