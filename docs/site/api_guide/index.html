@@ -11,7 +11,7 @@
     <link rel="shortcut icon" href="../img/favicon.ico">
 
     
-    <title>Quick Start - Sieve Documentation</title>
+    <title>API Quick Start Guide - Sieve Documentation</title>
     
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
@@ -77,7 +77,13 @@
                 
                 
                     <li class="active">
-                        <a href="./">Quick Start</a>
+                        <a href="./">API Quick Start Guide</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../ui_guide/">UI Quick Start Guide</a>
                     </li>
                 
                 
@@ -94,8 +100,8 @@
                             <i class="fas fa-arrow-left"></i> Previous
                         </a>
                     </li>
-                    <li class="disabled">
-                        <a rel="next" >
+                    <li >
+                        <a rel="next" href="../ui_guide/">
                             Next <i class="fas fa-arrow-right"></i>
                         </a>
                     </li>
@@ -126,7 +132,7 @@
                         <a href="../quick_start_notebook/">Quick Start</a>
                         <ul class="nav">
                             
-                            <li><a href="../quick_start_notebook/#quick-start-guide-sieve-api">Quick Start Guide - Sieve API</a></li>
+                            <li><a href="../quick_start_notebook/#sieve-api-quick-start-guide">Sieve API Quick Start Guide</a></li>
                                 
                                 <ul class="nav">
                                     
@@ -163,7 +169,7 @@
             </div>
         </div>
         <div class="col-md-9" role="main">
-            <h1 id="quick-start-guide-sieve-api">Quick Start Guide - Sieve API</h1>
+            <h1 id="sieve-api-quick-start-guide">Sieve API Quick Start Guide</h1>
 <p>This notebook demonstrates how to use the Sieve API to extract structured data from various document types. We'll cover three common use cases:</p>
 <ol>
 <li>Extracting data points from a PDF</li>
@@ -175,8 +181,7 @@ import json
 import time
 
 # API configuration
-# BASE_URL = 'https://api.usesieve.com' 
-BASE_URL = 'http://localhost:8080'  
+BASE_URL = 'https://api.usesieve.com' 
 # Authentication credentials
 email = &quot;your.email@example.com&quot;
 password = &quot;your_password&quot;
