@@ -6,11 +6,21 @@ nav:
   - UI Quick Start Guide: ui_guide.md
 
 theme:
-  name: readthedocs
-  #custom_dir: docs/overrides
-  theme:
-    features:
-      - toc.integrate
+  name: material
+  palette:
+    scheme: default  # Or "slate" for dark mode
+    primary: deep purple  # Change to your desired color (e.g., red, teal, green)
+    accent: purple  # Accent color for links and highlights
+
+markdown_extensions:
+  - pymdownx.highlight:
+      use_pygments: true
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
 
 extra_css:
   - style.css
+
+extra:
+  generator: false  # Optional: Removes "Made with MkDocs" footer
+  favicon: favicon.ico

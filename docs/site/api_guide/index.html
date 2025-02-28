@@ -1,307 +1,688 @@
-<!DOCTYPE html>
-<html class="writer-html5" lang="en" >
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>API Quick Start Guide - Sieve Documentation</title>
-    <link rel="stylesheet" href="../css/theme.css" />
-    <link rel="stylesheet" href="../css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
-        <link href="../style.css" rel="stylesheet" />
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
     
-      <script>
-        // Current page data
-        var mkdocs_page_name = "API Quick Start Guide";
-        var mkdocs_page_input_path = "api_guide.md";
-        var mkdocs_page_url = null;
-      </script>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../ui_guide/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.5">
     
-    <!--[if lt IE 9]>
-      <script src="../js/html5shiv.min.js"></script>
-    <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-      <script>hljs.highlightAll();</script> 
-</head>
+    
+      
+        <title>API Quick Start Guide - Sieve Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
 
-<body class="wy-body-for-nav" role="document">
 
-  <div class="wy-grid-for-nav">
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
-    <div class="wy-side-scroll">
-      <div class="wy-side-nav-search">
-          <a href=".." class="icon icon-home"> Sieve Documentation
-        </a><div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
-  </form>
-</div>
-      </div>
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../style.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
 
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
-                </li>
-              </ul>
-              <ul class="current">
-                <li class="toctree-l1 current"><a class="reference internal current" href="#">API Quick Start Guide</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#if-you-dont-have-an-account-yet-register-one">If you don't have an account yet, register one</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#if-you-have-an-account-log-in-to-get-an-authentication-token">If you have an account, log in to get an authentication token</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#helper-functions">Helper Functions</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#example-1-extract-data-from-pdf">Example 1: Extract Data from PDF</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#check-for-results">Check for results</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#example-2-financial-document-analysis">Example 2: Financial Document Analysis</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#example-3-credit-card-transaction-mapping">Example 3: Credit Card Transaction Mapping</a>
-    </li>
-    </ul>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../ui_guide/">UI Quick Start Guide</a>
-                </li>
-              </ul>
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#sieve-api-quick-start-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Sieve Documentation" class="md-header__button md-logo" aria-label="Sieve Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Sieve Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              API Quick Start Guide
+            
+          </span>
+        </div>
       </div>
     </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="..">Sieve Documentation</a>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
         
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
       </nav>
-      <div class="wy-nav-content">
-        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
-  <ul class="wy-breadcrumbs">
-    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
-      <li class="breadcrumb-item active">API Quick Start Guide</li>
-    <li class="wy-breadcrumbs-aside">
-    </li>
-  </ul>
-  <hr/>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-            <div class="section" itemprop="articleBody">
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
               
-                <h1 id="sieve-api-quick-start-guide">Sieve API Quick Start Guide</h1>
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Sieve Documentation" class="md-nav__button md-logo" aria-label="Sieve Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Sieve Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    API Quick Start Guide
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    API Quick Start Guide
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#if-you-dont-have-an-account-yet-register-one" class="md-nav__link">
+    <span class="md-ellipsis">
+      If you don't have an account yet, register one
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#if-you-have-an-account-log-in-to-get-an-authentication-token" class="md-nav__link">
+    <span class="md-ellipsis">
+      If you have an account, log in to get an authentication token
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#helper-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Helper Functions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-1-extract-data-from-pdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example 1: Extract Data from PDF
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example 1: Extract Data from PDF">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#check-for-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      Check for results
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-2-financial-document-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example 2: Financial Document Analysis
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-3-credit-card-transaction-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example 3: Credit Card Transaction Mapping
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ui_guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UI Quick Start Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#if-you-dont-have-an-account-yet-register-one" class="md-nav__link">
+    <span class="md-ellipsis">
+      If you don't have an account yet, register one
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#if-you-have-an-account-log-in-to-get-an-authentication-token" class="md-nav__link">
+    <span class="md-ellipsis">
+      If you have an account, log in to get an authentication token
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#helper-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Helper Functions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-1-extract-data-from-pdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example 1: Extract Data from PDF
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example 1: Extract Data from PDF">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#check-for-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      Check for results
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-2-financial-document-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example 2: Financial Document Analysis
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-3-credit-card-transaction-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example 3: Credit Card Transaction Mapping
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="sieve-api-quick-start-guide">Sieve API Quick Start Guide</h1>
 <p>This notebook demonstrates how to use the Sieve API to extract structured data from various document types. We'll cover three common use cases:</p>
 <ol>
 <li>Extracting data points from a PDF</li>
 <li>Analyzing financial documents with specific parameters</li>
 <li>Mapping credit card transactions to merchant stock tickers</li>
 </ol>
-<pre><code class="language-python">import requests
-import json
-import time
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
 
-# API configuration
-BASE_URL = 'https://api.usesieve.com' 
-# Authentication credentials
-email = &quot;your.email@example.com&quot;
-password = &quot;your_password&quot;
-user_type = &quot;requester&quot;
-full_name = &quot;Tutorial User&quot;
-</code></pre>
+<span class="c1"># API configuration</span>
+<span class="n">BASE_URL</span> <span class="o">=</span> <span class="s1">&#39;https://api.usesieve.com&#39;</span> 
+<span class="c1"># Authentication credentials</span>
+<span class="n">email</span> <span class="o">=</span> <span class="s2">&quot;your.email@example.com&quot;</span>
+<span class="n">password</span> <span class="o">=</span> <span class="s2">&quot;your_password&quot;</span>
+<span class="n">user_type</span> <span class="o">=</span> <span class="s2">&quot;requester&quot;</span>
+<span class="n">full_name</span> <span class="o">=</span> <span class="s2">&quot;Tutorial User&quot;</span>
+</code></pre></div>
 <h3 id="if-you-dont-have-an-account-yet-register-one">If you don't have an account yet, register one</h3>
-<pre><code class="language-python">registration_response = requests.post(f&quot;{BASE_URL}/api/v1/auth/register&quot;, json={
-        &quot;email&quot;: email,
-        &quot;password&quot;: password,
-        &quot;user_type&quot;: user_type,
-        &quot;full_name&quot;: full_name
-    })
-registration_response.json()
-</code></pre>
-<pre><code>{'token': 'eyJhbGciOiAiUlMyNTYiLCAidHlwIjogIkpXVCIsICJraWQiOiAiOTQ0YmZiYzg4MTkwNjY3ZjgwMjllZDRiOWQ4OWZmNGMyMzM1YWY1NSJ9.eyJpc3MiOiAiNTAxNzY0MjgzMTM1LWNvbXB1dGVAZGV2ZWxvcGVyLmdzZXJ2aWNlYWNjb3VudC5jb20iLCAic3ViIjogIjUwMTc2NDI4MzEzNS1jb21wdXRlQGRldmVsb3Blci5nc2VydmljZWFjY291bnQuY29tIiwgImF1ZCI6ICJodHRwczovL2lkZW50aXR5dG9vbGtpdC5nb29nbGVhcGlzLmNvbS9nb29nbGUuaWRlbnRpdHkuaWRlbnRpdHl0b29sa2l0LnYxLklkZW50aXR5VG9vbGtpdCIsICJ1aWQiOiAiN0tLZzA1MXU5c2ZOZEtlbzJFd2dqT3JHNkV4MiIsICJpYXQiOiAxNzM5OTgxODQ4LCAiZXhwIjogMTczOTk4NTQ0OH0.kiLTVP6SRJSbNJH1HQ3BtDKMNfOUneRWModCwz22O5B4wKMS51TmfJMUlgdAc6eFUB1Jbp2tQjb7fY3s4MOwl4TnV1UCQ18BH0-b3wJh6bad0DXtSKbTIADvKkvJtJupGxWf5ErCV3lw6XN9npz4cukngw_-YGrj4YXd97tPnMjZxXG6GPEwxGEF5keQjyLdO2e5T35tUGnXcI-TzNtLQUenyo_3LF31vAPwJl2Oz7f6mLpeejQPcwvmN1Pj9DggiUSiuQLPgB7njShcSlebiOwoEqW38X3UfcM0-03GGYdPuJuQ7THvbfks1HGFFQzqIMX4nHGF21rq3CymmqMHaw',
- 'user_id': '7KKg051u9sfNdKeo2EwgjOrG6Ex2',
- 'user_type': 'requester'}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">registration_response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">BASE_URL</span><span class="si">}</span><span class="s2">/api/v1/auth/register&quot;</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;email&quot;</span><span class="p">:</span> <span class="n">email</span><span class="p">,</span>
+        <span class="s2">&quot;password&quot;</span><span class="p">:</span> <span class="n">password</span><span class="p">,</span>
+        <span class="s2">&quot;user_type&quot;</span><span class="p">:</span> <span class="n">user_type</span><span class="p">,</span>
+        <span class="s2">&quot;full_name&quot;</span><span class="p">:</span> <span class="n">full_name</span>
+    <span class="p">})</span>
+<span class="n">registration_response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>{&#39;token&#39;: &#39;eyJhbGciOiAiUlMyNTYiLCAidHlwIjogIkpXVCIsICJraWQiOiAiOTQ0YmZiYzg4MTkwNjY3ZjgwMjllZDRiOWQ4OWZmNGMyMzM1YWY1NSJ9.eyJpc3MiOiAiNTAxNzY0MjgzMTM1LWNvbXB1dGVAZGV2ZWxvcGVyLmdzZXJ2aWNlYWNjb3VudC5jb20iLCAic3ViIjogIjUwMTc2NDI4MzEzNS1jb21wdXRlQGRldmVsb3Blci5nc2VydmljZWFjY291bnQuY29tIiwgImF1ZCI6ICJodHRwczovL2lkZW50aXR5dG9vbGtpdC5nb29nbGVhcGlzLmNvbS9nb29nbGUuaWRlbnRpdHkuaWRlbnRpdHl0b29sa2l0LnYxLklkZW50aXR5VG9vbGtpdCIsICJ1aWQiOiAiN0tLZzA1MXU5c2ZOZEtlbzJFd2dqT3JHNkV4MiIsICJpYXQiOiAxNzM5OTgxODQ4LCAiZXhwIjogMTczOTk4NTQ0OH0.kiLTVP6SRJSbNJH1HQ3BtDKMNfOUneRWModCwz22O5B4wKMS51TmfJMUlgdAc6eFUB1Jbp2tQjb7fY3s4MOwl4TnV1UCQ18BH0-b3wJh6bad0DXtSKbTIADvKkvJtJupGxWf5ErCV3lw6XN9npz4cukngw_-YGrj4YXd97tPnMjZxXG6GPEwxGEF5keQjyLdO2e5T35tUGnXcI-TzNtLQUenyo_3LF31vAPwJl2Oz7f6mLpeejQPcwvmN1Pj9DggiUSiuQLPgB7njShcSlebiOwoEqW38X3UfcM0-03GGYdPuJuQ7THvbfks1HGFFQzqIMX4nHGF21rq3CymmqMHaw&#39;,
+ &#39;user_id&#39;: &#39;7KKg051u9sfNdKeo2EwgjOrG6Ex2&#39;,
+ &#39;user_type&#39;: &#39;requester&#39;}
+</code></pre></div>
 <h3 id="if-you-have-an-account-log-in-to-get-an-authentication-token">If you have an account, log in to get an authentication token</h3>
-<pre><code class="language-python">login_result = requests.post(f&quot;{BASE_URL}/api/v1/auth/login&quot;, json={
-        &quot;email&quot;: email,
-        &quot;password&quot;: password
-    })
-if login_result.status_code == 200:
-    print(&quot;Login successful!&quot;)
-elif login_result.status_code != 200:
-    print(&quot;Login failed. Check your credentials again.&quot;)
-# Save the token for future API calls
-token = login_result.json().get('token')
-# Set the token in your header
-headers = {
-    'Authorization': f'Bearer {token}',
-    'Content-Type': 'application/json'
-}
-</code></pre>
-<pre><code>Login successful!
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">login_result</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">BASE_URL</span><span class="si">}</span><span class="s2">/api/v1/auth/login&quot;</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;email&quot;</span><span class="p">:</span> <span class="n">email</span><span class="p">,</span>
+        <span class="s2">&quot;password&quot;</span><span class="p">:</span> <span class="n">password</span>
+    <span class="p">})</span>
+<span class="k">if</span> <span class="n">login_result</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Login successful!&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">login_result</span><span class="o">.</span><span class="n">status_code</span> <span class="o">!=</span> <span class="mi">200</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Login failed. Check your credentials again.&quot;</span><span class="p">)</span>
+<span class="c1"># Save the token for future API calls</span>
+<span class="n">token</span> <span class="o">=</span> <span class="n">login_result</span><span class="o">.</span><span class="n">json</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;token&#39;</span><span class="p">)</span>
+<span class="c1"># Set the token in your header</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;Authorization&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;Bearer </span><span class="si">{</span><span class="n">token</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Content-Type&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>Login successful!
+</code></pre></div>
 <h2 id="helper-functions">Helper Functions</h2>
 <p>Let's define some helper functions to interact with the API and check job status.</p>
-<pre><code class="language-python">def submit_job(document_type, content, metadata=None):
-    url = f'{BASE_URL}/process'
-    payload = {
-        'document_type': document_type,
-        'content': content,
-        'metadata': metadata or {}
-    }
-    response = requests.post(url, headers=headers, json=payload)
-    response.raise_for_status()
-    return response.json()
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">submit_job</span><span class="p">(</span><span class="n">document_type</span><span class="p">,</span> <span class="n">content</span><span class="p">,</span> <span class="n">metadata</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">BASE_URL</span><span class="si">}</span><span class="s1">/process&#39;</span>
+    <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;document_type&#39;</span><span class="p">:</span> <span class="n">document_type</span><span class="p">,</span>
+        <span class="s1">&#39;content&#39;</span><span class="p">:</span> <span class="n">content</span><span class="p">,</span>
+        <span class="s1">&#39;metadata&#39;</span><span class="p">:</span> <span class="n">metadata</span> <span class="ow">or</span> <span class="p">{}</span>
+    <span class="p">}</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
+    <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 
-def check_job_status(job_id):
-    url = f'{BASE_URL}/status/{job_id}'
-    response = requests.get(url, headers=headers)
-    response.raise_for_status()
-    return response.json()
+<span class="k">def</span><span class="w"> </span><span class="nf">check_job_status</span><span class="p">(</span><span class="n">job_id</span><span class="p">):</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">BASE_URL</span><span class="si">}</span><span class="s1">/status/</span><span class="si">{</span><span class="n">job_id</span><span class="si">}</span><span class="s1">&#39;</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+    <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 
-def wait_for_completion(job_id, max_attempts=30, delay=60):
-    for _ in range(max_attempts):
-        status = check_job_status(job_id)
-        if status['status'] == 'completed':
-            return status
-        elif status['status'] == 'failed':
-            raise Exception(f'Job failed: {status.get(&quot;error&quot;, &quot;Unknown error&quot;)}')
-        time.sleep(delay)
-    raise TimeoutError('Job did not complete within the expected time')
-</code></pre>
+<span class="k">def</span><span class="w"> </span><span class="nf">wait_for_completion</span><span class="p">(</span><span class="n">job_id</span><span class="p">,</span> <span class="n">max_attempts</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="mi">60</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_attempts</span><span class="p">):</span>
+        <span class="n">status</span> <span class="o">=</span> <span class="n">check_job_status</span><span class="p">(</span><span class="n">job_id</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">status</span><span class="p">[</span><span class="s1">&#39;status&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;completed&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">status</span>
+        <span class="k">elif</span> <span class="n">status</span><span class="p">[</span><span class="s1">&#39;status&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;failed&#39;</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Job failed: </span><span class="si">{</span><span class="n">status</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;error&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Unknown error&quot;</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">delay</span><span class="p">)</span>
+    <span class="k">raise</span> <span class="ne">TimeoutError</span><span class="p">(</span><span class="s1">&#39;Job did not complete within the expected time&#39;</span><span class="p">)</span>
+</code></pre></div>
 <h2 id="example-1-extract-data-from-pdf">Example 1: Extract Data from PDF</h2>
 <p>Let's extract specific data points from a PDF document.</p>
-<pre><code class="language-python">response = requests.post(f'{BASE_URL}/api/v1/process', headers=headers, json={
-    &quot;document_type&quot;: &quot;pdf&quot;,
-    &quot;metadata&quot;: {
-        &quot;url&quot;: &quot;https://www.cecafe.com.br/site/wp-content/uploads/2023/03/CECAFE-Monthly-Coffee-Report-JANUARY-2025.pdf&quot;,
-        'data_points': ['Coffee export volume in most recent period (USD)']
-    }
-})
-response.raise_for_status()
-job_id = response.json().get(&quot;job_id&quot;)
-print(&quot;job id: &quot;, job_id)
+<div class="highlight"><pre><span></span><code><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">BASE_URL</span><span class="si">}</span><span class="s1">/api/v1/process&#39;</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="p">{</span>
+    <span class="s2">&quot;document_type&quot;</span><span class="p">:</span> <span class="s2">&quot;pdf&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;metadata&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://www.cecafe.com.br/site/wp-content/uploads/2023/03/CECAFE-Monthly-Coffee-Report-JANUARY-2025.pdf&quot;</span><span class="p">,</span>
+        <span class="s1">&#39;data_points&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Coffee export volume in most recent period (USD)&#39;</span><span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">})</span>
+<span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+<span class="n">job_id</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;job_id&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;job id: &quot;</span><span class="p">,</span> <span class="n">job_id</span><span class="p">)</span>
 
-# # Wait for completion and get results
-# final_result = wait_for_completion(result['job_id'])
-# print(json.dumps(final_result, indent=2))
-</code></pre>
-<pre><code>job id:  t1mPRc2JtlCKYtia1uPg
-</code></pre>
+<span class="c1"># # Wait for completion and get results</span>
+<span class="c1"># final_result = wait_for_completion(result[&#39;job_id&#39;])</span>
+<span class="c1"># print(json.dumps(final_result, indent=2))</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>job id:  t1mPRc2JtlCKYtia1uPg
+</code></pre></div>
 <h3 id="check-for-results">Check for results</h3>
-<pre><code class="language-python">url = f'{BASE_URL}/api/v1/status/{job_id}'
-response = requests.get(url, headers=headers)
-response.raise_for_status()
-response.json()
-print(&quot;status:&quot;, response.json().get(&quot;status&quot;))
-if response.json().get(&quot;status&quot;) == &quot;completed&quot;:
-    print(&quot;response:&quot;, response.json().get(&quot;ai_result&quot;).get(&quot;result&quot;))
-</code></pre>
-<pre><code>status: completed
-response: {'Coffee export volume in most recent period (USD)': '1,315,849.2'}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">BASE_URL</span><span class="si">}</span><span class="s1">/api/v1/status/</span><span class="si">{</span><span class="n">job_id</span><span class="si">}</span><span class="s1">&#39;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+<span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;status:&quot;</span><span class="p">,</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;status&quot;</span><span class="p">))</span>
+<span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;status&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;completed&quot;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;response:&quot;</span><span class="p">,</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;ai_result&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;result&quot;</span><span class="p">))</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>status: completed
+response: {&#39;Coffee export volume in most recent period (USD)&#39;: &#39;1,315,849.2&#39;}
+</code></pre></div>
 <h2 id="example-2-financial-document-analysis">Example 2: Financial Document Analysis</h2>
 <p>Extract specific financial data points from SEC filings or other financial documents.</p>
-<pre><code class="language-python">response = requests.post(f'{BASE_URL}/api/v1/process', headers=headers, json={
-    &quot;document_type&quot;: &quot;sec&quot;,
-    &quot;content&quot;: &quot;None&quot;,
-    &quot;metadata&quot;: {
-        'ticker': 'AAPL',
-        'metrics': [&quot;geographic distribution of revenue&quot;]
-    }
-})
-response.raise_for_status()
-job_id = response.json().get(&quot;job_id&quot;)
-print(&quot;job id: &quot;, job_id)
-
-
-</code></pre>
-<pre><code>job id:  5pwVuIuEm3ybBvTBBHcx
-</code></pre>
-<pre><code class="language-python">url = f'{BASE_URL}/api/v1/status/{job_id}'
-response = requests.get(url, headers=headers)
-response.raise_for_status()
-response.json()
-print(&quot;status:&quot;, response.json().get(&quot;status&quot;))
-if response.json().get(&quot;status&quot;) == &quot;completed&quot;:
-    print(&quot;response:&quot;, response.json().get(&quot;ai_result&quot;).get(&quot;result&quot;))
-</code></pre>
-<pre><code>status: completed
-response: {'revenue_by_geography': None}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">BASE_URL</span><span class="si">}</span><span class="s1">/api/v1/process&#39;</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="p">{</span>
+    <span class="s2">&quot;document_type&quot;</span><span class="p">:</span> <span class="s2">&quot;sec&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;None&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;metadata&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;ticker&#39;</span><span class="p">:</span> <span class="s1">&#39;AAPL&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;metrics&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;geographic distribution of revenue&quot;</span><span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">})</span>
+<span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+<span class="n">job_id</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;job_id&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;job id: &quot;</span><span class="p">,</span> <span class="n">job_id</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>job id:  5pwVuIuEm3ybBvTBBHcx
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">BASE_URL</span><span class="si">}</span><span class="s1">/api/v1/status/</span><span class="si">{</span><span class="n">job_id</span><span class="si">}</span><span class="s1">&#39;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+<span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;status:&quot;</span><span class="p">,</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;status&quot;</span><span class="p">))</span>
+<span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;status&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;completed&quot;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;response:&quot;</span><span class="p">,</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;ai_result&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;result&quot;</span><span class="p">))</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>status: completed
+response: {&#39;revenue_by_geography&#39;: None}
+</code></pre></div>
 <h2 id="example-3-credit-card-transaction-mapping">Example 3: Credit Card Transaction Mapping</h2>
 <p>Map a credit card transaction description to a merchant's stock ticker.</p>
-<pre><code class="language-python">response = requests.post(f'{BASE_URL}/api/v1/process', headers=headers, json={
-    &quot;document_type&quot;: &quot;credit_card&quot;,
-    &quot;metadata&quot; : {
-        &quot;transaction&quot;: &quot;WHOLEFDS MKT 10259 AUSTIN TX&quot;,
-        'transaction_date': '2024-01-15',
-        'amount': 156.78,
-        &quot;data_points&quot;: [&quot;merchant stock ticker&quot;]
-    }
-})
-response.raise_for_status()
-job_id = response.json().get(&quot;job_id&quot;)
-print(&quot;job id: &quot;, job_id)
+<div class="highlight"><pre><span></span><code><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">BASE_URL</span><span class="si">}</span><span class="s1">/api/v1/process&#39;</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="p">{</span>
+    <span class="s2">&quot;document_type&quot;</span><span class="p">:</span> <span class="s2">&quot;credit_card&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;metadata&quot;</span> <span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;transaction&quot;</span><span class="p">:</span> <span class="s2">&quot;WHOLEFDS MKT 10259 AUSTIN TX&quot;</span><span class="p">,</span>
+        <span class="s1">&#39;transaction_date&#39;</span><span class="p">:</span> <span class="s1">&#39;2024-01-15&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;amount&#39;</span><span class="p">:</span> <span class="mf">156.78</span><span class="p">,</span>
+        <span class="s2">&quot;data_points&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;merchant stock ticker&quot;</span><span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">})</span>
+<span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+<span class="n">job_id</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;job_id&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;job id: &quot;</span><span class="p">,</span> <span class="n">job_id</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>job id:  synGikSyt7Tpiag6S6OE
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Wait for completion and get results</span>
+<span class="n">final_result</span> <span class="o">=</span> <span class="n">wait_for_completion</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;job_id&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">final_result</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+</code></pre></div>
 
 
 
-</code></pre>
-<pre><code>job id:  synGikSyt7Tpiag6S6OE
-</code></pre>
-<pre><code class="language-python"># Wait for completion and get results
-final_result = wait_for_completion(result['job_id'])
-print(json.dumps(final_result, indent=2))
-</code></pre>
-              
+
+
+
+
+
+
+
+
+
+                
+              </article>
             </div>
-          </div><footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href=".." class="btn btn-neutral float-left" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../ui_guide/" class="btn btn-neutral float-right" title="UI Quick Start Guide">Next <span class="icon icon-circle-arrow-right"></span></a>
-    </div>
-
-  <hr/>
-
-  <div role="contentinfo">
-    <!-- Copyright etc -->
-  </div>
-
-  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-</footer>
           
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
-      </div>
-
-    </section>
-
-  </div>
-
-  <div class="rst-versions" role="note" aria-label="Versions">
-  <span class="rst-current-version" data-toggle="rst-current-version">
-    
-    
-      <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
-    
-    
-      <span><a href="../ui_guide/" style="color: #fcfcfc">Next &raquo;</a></span>
-    
-  </span>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
 </div>
-    <script src="../js/jquery-3.6.0.min.js"></script>
-    <script>var base_url = "..";</script>
-    <script src="../js/theme_extra.js"></script>
-    <script src="../js/theme.js"></script>
-      <script src="../search/main.js"></script>
-    <script>
-        jQuery(function () {
-            SphinxRtdTheme.Navigation.enable(true);
-        });
-    </script>
-
-</body>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+    
+  </body>
 </html>

@@ -11,6 +11,7 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+
 /* Chrome text effect for headings */
 h1 {
     background: linear-gradient(
@@ -22,10 +23,12 @@ h1 {
     );
     -webkit-background-clip: text;
     background-clip: text;
-    color: transparent;
+    color: transparent !important;
     animation: chrome-animation 8s linear infinite;
     background-size: 400% 400%;
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    font-weight: bolder !important;
+    font-family: 'Poppins', sans-serif;
 }
 
 @keyframes chrome-animation {
