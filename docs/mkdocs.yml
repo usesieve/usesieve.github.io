@@ -6,13 +6,11 @@ nav:
   - UI Quick Start Guide: ui_guide.md
 
 theme:
-  name: cinder
+  name: readthedocs
   #custom_dir: docs/overrides
   theme:
     features:
-      - navigation.expand
       - toc.integrate
-      - navigation.expand
 
 extra_css:
   - style.css
