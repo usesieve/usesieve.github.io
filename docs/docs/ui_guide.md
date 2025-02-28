@@ -23,7 +23,7 @@ If you have registered, click on the Login tab and enter your username and passw
 
 ### Submit Request
 
-Now you are ready to start using Sieve! Let's extract specific data points from a PDF document. In this example, we will extract data center revenue from Nvidia's 10k report for the fiscal year ending January 26, 2025. 
+Now you are ready to start using Sieve! Let's extract specific data points from a PDF document. In this example, we will extract gaming revenue from Nvidia's 10k report for the fiscal year ending January 26, 2025. 
 
 To sumbit this request, we will leave "Document Type" set to `pdf`.
 
@@ -32,7 +32,7 @@ Paste Nvidia's 10-K URL, shown below, into the PDF URL field.
 ```
 https://s201.q4cdn.com/141608511/files/doc_financials/2025/q4/177440d5-3b32-4185-8cc8-95500a9dc783.pdf
 ```
-Under Data Points to Extract, add the text `Data Center Revenue for year ending Jan 26, 2025 in USD`. Click Submit. You should see the page load for a few seconds before it confirms that the document has been submitted for processing. The example request is shown below. 
+Under Data Points to Extract, add the text `Gaming Revenue for year ending Jan 26, 2025 in USD`. Click Submit. You should see the page load for a few seconds before it confirms that the document has been submitted for processing. The example request is shown below. 
 
 ![Product Screenshot](img/UI_request.png)
 
